@@ -22,6 +22,7 @@ window.onload = function() {
         hover_enable = false;
     }
 
+    
     let larrow = document.getElementById('arrow-left');
     let rarrow = document.getElementById('arrow-right');
 
