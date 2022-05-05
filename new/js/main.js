@@ -22,7 +22,6 @@ window.onload = function() {
         hover_enable = false;
     }
 
-    
     let larrow = document.getElementById('arrow-left');
     let rarrow = document.getElementById('arrow-right');
 
@@ -32,7 +31,12 @@ window.onload = function() {
     let project2 = document.getElementById('second__project');
     let project3 = document.getElementById('third__project');
 
+    let modal = document.getElementsByClassName("premodal")[0];;
     let viewProject = document.getElementsByClassName("view_project")[0];
+
+    let close1 = document.getElementById('close1');
+    let close2 = document.getElementById('close2');
+    let close3 = document.getElementById('close3');
 
     for (let dot = 0; dot < dots.length; dot++) {
         dots[dot].addEventListener('click', dotClick);
@@ -186,12 +190,45 @@ window.onload = function() {
         showSlides();
     }
 
+    function onMouseEnter(num) {
+
+        if (!hover_enable) {
+            modal.classList.toggle('premodal');     
+            modal.classList.toggle('modal');
+            document.body.style.overflow="hidden";
+            viewProject.classList.remove('view_project');
+            viewProject.classList.add('view_project_modal');
+        }
+
+        viewProject.classList.toggle('hide');
+        let project = viewProject.children[num];
+        showProject(project);
+    }
+
+    function onMouseLeave(num) {
+
+        if (!hover_enable) {
+            modal.classList.toggle('premodal');     
+            modal.classList.toggle('modal');
+            document.body.style.removeProperty('overflow');
+            viewProject.classList.remove('view_project_modal');
+            viewProject.classList.add('view_project');
+        }
+
+        let project = viewProject.children[num];
+        hideProject(project);
+        viewProject.classList.toggle('hide');
+ 
+    }
+
     larrow.addEventListener('click', larrowClick);
     rarrow.addEventListener('click', rarrowClick);
 
     window.addEventListener('resize', function(event){
         if (window.innerWidth <= 839) {
             hover_enable = false;
+        } else {
+            hover_enable = true;
         }
         setSliderHeight();
     });
@@ -200,27 +237,24 @@ window.onload = function() {
 
     function showProject(project) {
         project.classList.toggle('hide');
+        if (!hover_enable) project.children[2].classList.toggle('hide');
     }
 
     function hideProject(project) {
         project.classList.toggle('hide');
+        if (!hover_enable) project.children[2].classList.toggle('hide');
     }
 
     project1.onmouseenter = function(event) {
         
-        if (!hover_enable) return;
-        viewProject.classList.toggle('hide');
-        let project = viewProject.children[0];
-        showProject(project);
-        //console.log(project.children[2]);
+        console.log(hover_enable);
+        if (hover_enable) onMouseEnter(0);
+        
     };
 
     project1.onmouseleave = function(event) {
         
-        if (!hover_enable) return;
-        let project = viewProject.children[0];
-        hideProject(project);
-        viewProject.classList.toggle('hide');
+        if (hover_enable) onMouseLeave(0)
        
     };
 
@@ -228,24 +262,48 @@ window.onload = function() {
         if (hover_enable) {
             window.open("https://lemadior.pp.ua", "_blank");
         } else {
-            console.log(window.innerWidth);
+            // console.log(window.innerWidth);
+            // modal.classList.toggle('premodal');     
+            // modal.classList.toggle('modal');
+            // document.body.style.overflow="hidden";
+
+            // viewProject.classList.toggle('hide');
+            // viewProject.classList.remove('view_project');
+            // viewProject.classList.toggle('hide');
+            // let project = viewProject.children[0];
+            // showProject(project);
+            onMouseEnter(0);
         }
+    }
+
+    close1.onclick = function(event) {
+        // modal.classList.toggle('premodal');     
+        // modal.classList.toggle('modal');
+        // document.body.style.removeProperty('overflow');
+        // viewProject.classList.remove('view_project');
+        // viewProject.classList.add('view_project_modal');
+        // let project = viewProject.children[0];
+        // hideProject(project);
+        // viewProject.classList.toggle('hide');
+        onMouseLeave(0)
     }
 
     project2.onmouseenter = function(event) {
         console.log('Project 2 IN')
         if (!hover_enable) return;
-        viewProject.classList.toggle('hide');
-        let project = viewProject.children[1];
-        showProject(project);
+        // viewProject.classList.toggle('hide');
+        // let project = viewProject.children[1];
+        // showProject(project);
+        onMouseEnter(1);
     };
 
     project2.onmouseleave = function(event) {
         console.log('Project 2 OUT')
         if (!hover_enable) return;
-        let project = viewProject.children[1];
-        hideProject(project);
-        viewProject.classList.toggle('hide');
+        // let project = viewProject.children[1];
+        // hideProject(project);
+        // viewProject.classList.toggle('hide');
+        onMouseLeave(1);
     };
 
     project2.onclick = function(event) {
@@ -253,24 +311,31 @@ window.onload = function() {
             window.open("https://lemadior.pp.ua/nikos/start.html", "_blank");
         } else {
             console.log(window.innerWidth);
+            onMouseEnter(1);
         }
         
+    }
+
+    close2.onclick = function(event) {
+        onMouseLeave(1)
     }
 
     project3.onmouseenter = function(event) {
         console.log('Project 3 IN');
         if (!hover_enable) return;
-        viewProject.classList.toggle('hide');
-        let project = viewProject.children[2];
-        showProject(project);
+        // viewProject.classList.toggle('hide');
+        // let project = viewProject.children[2];
+        // showProject(project);
+        onMouseEnter(2);
     };
 
     project3.onmouseleave = function(event) {
         console.log('Project 3 OUT');
         if (!hover_enable) return;
-        let project = viewProject.children[2];
-        hideProject(project);
-        viewProject.classList.toggle('hide');
+        // let project = viewProject.children[2];
+        // hideProject(project);
+        // viewProject.classList.toggle('hide');
+        onMouseLeave(2);
     };
 
     project3.onclick = function(event) {
@@ -278,9 +343,13 @@ window.onload = function() {
             window.open("https://olliplus.com.ua", "_blank");
         } else {
             console.log(window.innerWidth);
+            onMouseEnter(2);
         }
         
     }
 
+    close3.onclick = function(event) {
+        onMouseLeave(2)
+    }
 
 }
