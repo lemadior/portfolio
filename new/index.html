@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="css/style.css">
-        <title>Me portfolio</title>
+        <title>Mine portfolio</title>
     </head>
 <body>
 
@@ -19,10 +19,11 @@
 
                 <!-- <div class="collapse" id="navbarSupportedContent"> -->
                     <ul class="navbar-list">
-                        <li class="nav-item"><a class="nav-link" href="#">LIFESTYLE</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="#">LIFESTYLE</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">PHOTODIARY</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">MUSIC</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">TRAVEL</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">TRAVEL</a></li> -->
+                        <li class="nav-item simple">PORTFOLIO WEBSITE OF THE WEB DEVELOPER</li>
                     </ul>
                 <!-- </div> -->
             </nav>
@@ -127,9 +128,10 @@
                         <hr>
                         <p style="text-align: justify">
                             Specialized education:<br>
-                            <br>                            
+                            <p>                         
                             Oles Honchar Dnipropetrovsk National University. Physics and Technology Faculty.
                             Design and construction of aircraft department (mechanical engineer).
+                            <p>
                         </p>
                         <p>    
                             Self-education:
@@ -167,7 +169,7 @@
                         <h2>Skill level</h2>
                         <hr>
                         <p >
-                            <ul style="font-size: 28px;">
+                            <ul id="skill_level">
                                 <li>HTML5 / CSS - 85%</li><br>
                                 <li>JavaScript  - 80%</li><br>
                                 <li>PHP / SQL   - 70%</li>
@@ -189,16 +191,12 @@
             </div>
         </div>
 
-        
-
-       
-
         <div>
             <div class="row">
                 <div class="col">
-                    <div class="single-post">
-                        <h3 class="post-category">Few Words</h3>
-                        <h2 class="post-title">A little bit about myself...</h2>
+                    <div class="cat-post">
+                        <h3 class="cat-name">Few Words</h3>
+                        <h2 clas="cat-title">A little bit about myself...</h2>
                         <p>I'm a professional programmer in scripting languages (bash, TCL, etc). Due to various circumstances, I decided to change 
                             the direction of my activity and try myself in web development.
                         </p>
@@ -226,82 +224,173 @@
                 </div>	  
             </div>
         </div>
-
- 
         
         <div class="grid-posts">
-            
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card">
-                            <img src="image/pic1.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h3 class="post-category">Lifestyle</h3>
-                                <h5 class="post-title">More than just a music festival</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">	
-                        <div class="card">
-                            <img src="image/pic2.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h3 class="post-category">Lifestyle</h3>
-                                <h5 class="post-title">Life tasters better with coffee</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card">
-                            <img src="image/pic3.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h3 class="post-category">Lifestyle</h3>
-                                <h5 class="post-title">American deram</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card">
-                            <img src="image/pic4.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h3 class="post-category">Lifestyle</h3>
-                                <h5 class="post-title">A day exploring the Alps</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="cat-post">
+                <h3 class="cat-name">All projects</h3>
+                <h2 class="cat-title">Portfolio</h2>
+            </div>
 
+            <div class="current__project">
+                <div class="about-projects">
+                    <p>I'm self-educated <br>web developer.</p>
+                    <p>To view my work just click on the 'circle' buttons on the right
+                       concerned to the specified technologies.</p>
+                    <p>All websites workable but support only ukrainian and russian
+                       languages.
+                    </p>   
                 </div>
-            
+                <div class="view_project hide">
+                    <div class="first-project hide">
+                        <div><img src="image/1.jpg" width="90%"></div>
+                        <div>
+                            <div>
+                                This is my first project<br> (my personal website).<br>
+                                Written on PHP + CSS with small amount of
+                                JavaScript.
+                                MySQL used to store all text data.<br>
+                                Layout and design done by myself from scratch.
+                            </div>
+                        </div>
+                        <div class="hide">
+                            <a href="">V I E W</a>
+                            <a href="">C L O S E</a>
+                        </div>
+                    </div>
+                    <div class="second-project hide">
+                        <div><img src="image/2.jpg" width="90%"></div>
+                        <div>
+                            <div>
+                                Initially, the website was considered as an educational project, 
+                                then (almost unchanged) it was implemented as a commercial project 
+                                for the local funeral services bureau, where it functioned as a 
+                                business card website for four years. 
+                            </div>
+                        </div>
+                        <div class="hide">
+                            <a href="">V I E W</a>
+                            <a href="">C L O S E</a>
+                        </div>
+                    </div>
+                    <div class="third-project hide">
+                        <div><img src="image/3.jpg" width="90%"></div>
+                        <div>
+                            <div>
+                                An online store created from scratch on the Opencart platform with 
+                                a small (about 15%) level of customization.<br> 
+                                All content is carried 
+                                out independently, including image processing and product descriptions.<br>
+                                The store is currently in operation. 
+                            </div>
+                        </div>
+                        <div class="hide">
+                            <a href="">V I E W</a>
+                            <a href="">C L O S E</a>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            <div class="wrapper1">
+                <div class="projects">
+                    <div class="project">
+
+                            <div class="project_circle">
+                                <div class="outer__circle">
+                                    <div id="first__project" class="inner__circle"></div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <span class="cb__start"></span>
+                                <div class="cb__text">
+                                    <div>PHP + MySQL + CSS + JavaScript</div>
+                                </div>
+                                <span class="cb__end"></span>
+                            </div>
+                    
+                    </div>
+                    <div class="project">
+                        
+                            <div class="project_circle">
+                                <div class="outer__circle">
+                                    <div id="second__project" class="inner__circle"></div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <span class="cb__start"></span>
+                                <div class="cb__text">
+                                    <div>AngularJS + Bootstrap + JSON</div>
+                                </div>
+                                <span class="cb__end"></span>
+                            </div>
+                        
+                    </div>
+                    <div class="project">
+                        
+                            <div class="project_circle">
+                                <div class="outer__circle">
+                                    <div id="third__project" class="inner__circle"></div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <span class="cb__start"></span>
+                                <div class="cb__text">
+                                    <div>Opencart CMS + Custom settings</div>
+                                </div>
+                                <span class="cb__end"></span>
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="top__line">
+                    <span class="start__point"></span>
+                    <span class="end__point"></span>
+                </div> 
+                <div class="main_circle">
+                    <div class="outer__circle">
+                        <div id="sel__project" class="inner__circle"></div>
+                    </div>
+                </div>
+                <div class="center__line">
+                    <span class="start__point"></span>
+                    <span class="end__point"></span>
+                </div>
+                <div class="bottom__line">
+                    <span class="start__point"></span>
+                    <span class="end__point"></span>
+                </div>
+            </div>
+        
+        </div>
         </div>
 
     </div>
 
-        <footer>
-            <!-- <div class="container"> -->
-                <div>
-                    <div class="footer-left">
-                        <a href="terms.html">Terms and conditions</a>
-                        <!-- <a href="#">Privacy</a> -->
-                    </div>
-                    <div class="footer-right">
-                        <span id="copyright"></span>
-                        <span>All Rights Reserverd</span>
-                    </div>
+    <footer>
+        <!-- <div class="container"> -->
+            <div>
+                <div class="footer-left">
+                    <a href="terms.html">Terms and conditions</a>
+                    <!-- <a href="#">Privacy</a> -->
                 </div>
-            <!-- </div> -->
-        </footer>
+                <div class="footer-right">
+                    <span id="copyright"></span>
+                    <span>All Rights Reserverd</span>
+                </div>
+            </div>
+        <!-- </div> -->
+    </footer>
 
 
 
 
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <!-- ptional JavaScript -->
+        <!--< jQuery first, then Popper.js, then Bootstrap JS -->
         <!-- <script src="js/jquery-3.5.1.min.js"></script> -->
         <!-- <script src="js/popper.min.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js"></script> -->
+        <scriptsrc="bootstrap/js/bootstrap.min.js"></script> -->
         <script src="js/main.js"></script>
     </body>
 </html>
