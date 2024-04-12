@@ -110,7 +110,7 @@ header .navbar-light {
 }
 
 header .navbar-brand {
-    font-family: "Quintessential";
+    font-family: "Quintessential", serif;
     font-weight: 400;
     font-size: 30px;
     color: #000;
