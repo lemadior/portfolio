@@ -1,7 +1,6 @@
 'use strict';
 
 window.onload = function() {
-
     let copyright = document.getElementById('copyright');
     copyright.innerHTML = "Copyright &copy; " + (new Date()).getFullYear() + " | ";
 
@@ -46,19 +45,16 @@ window.onload = function() {
     showSlides();
 
     function showSlides() {
-
         let i = null;
         let slides = document.getElementsByClassName("image-sliderfade");
         let dots = document.getElementsByClassName("dot");
         
         for (i=0; i < slides.length; i++) {
-
             if (slides[i].classList.contains('hide')) {
                 slides[i].classList.remove('hide');
             }
 
             slides[i].style.display = 'none';
-
         }
 
         if (expand !== null) {
@@ -89,23 +85,15 @@ window.onload = function() {
         span = currSlider.children[0];
 
         for (let i=0;i<currSlider.childElementCount;i++) {
-        
             if (currSlider.children[i].className.includes('expand')) {
-                
                 expand=currSlider.children[i];
                 expand.addEventListener('click', onExpand);
-            
             } else if (currSlider.children[i].className.includes('collapse')) {
-                
                 collapse = currSlider.children[i];
                 collapse.addEventListener('click', onCollapse);
-            
             } else if (currSlider.children[i].className.includes('content')) {
-                
                 content = currSlider.children[i];
-            
-            } 
-
+            }
          }
 
         for (i=0; i<dots.length; i++) {
@@ -115,11 +103,9 @@ window.onload = function() {
         dots[slideIndex-1].className += " active";
 
         timer = setTimeout(showSlides, 5000);
-    
     }
 
     function stopSlides() {
-        
         if (timer === null) {
             return;
         }
@@ -129,7 +115,6 @@ window.onload = function() {
         timer = null;
         
         slideIndex--;
-    
     }
 
     function dotClick() {
@@ -272,29 +257,23 @@ window.onload = function() {
     }
 
     function hideProject(project) {
-        
         project.classList.toggle('hide');
         
         if (!hover_enable) {
             project.children[2].classList.toggle('hide');
         }
-
     }
 
     project1.onmouseenter = function(event) {
-        
         if (hover_enable) {
             onMouseEnter(0);
         }
-
     };
 
     project1.onmouseleave = function(event) {
-        
         if (hover_enable) {
             onMouseLeave(0);
         }  
-
     };
 
     project1.onclick = function(event) {
@@ -308,48 +287,37 @@ window.onload = function() {
     }
 
     close1.onclick = function(event) {
-        
         onMouseLeave(0)
-    
     }
 
     project2.onmouseenter = function(event) {
-        
         if (hover_enable) {
             onMouseEnter(1);
         }
-    };
+    }
 
     project2.onmouseleave = function(event) {
-
         if (hover_enable) {
             onMouseLeave(1);
         }
-
-    };
+    }
 
     project2.onclick = function(event) {
-        
         if (hover_enable) {
             window.open("https://lemadior.pp.ua/nikos/start.html", "_blank");
         } else {
             onMouseEnter(1);
         }  
-    
     }
 
     close2.onclick = function(event) {
-        
         onMouseLeave(1)
-    
     }
 
     project3.onmouseenter = function(event) {
- 
-        if (hover_enable) {
+         if (hover_enable) {
             onMouseEnter(2);
         }
-
     };
 
     project3.onmouseleave = function(event) {
