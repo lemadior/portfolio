@@ -1,8 +1,8 @@
 'use strict';
 
 window.onload = function() {
-    let copyright = document.getElementById('copyright');
-    copyright.innerHTML = "Copyright &copy; " + (new Date()).getFullYear() + " | ";
+    const copyright = document.getElementById('copyright');
+    copyright.innerHTML = "Copyright &copy; " + (new Date()).getFullYear() + " ";
 
     let currImage = null;   // Current image in the slider
     let currSlider = null;  // Current slider itself
