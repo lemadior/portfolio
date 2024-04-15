@@ -1,21 +1,21 @@
 @font-face {
-    font-family: 'Playfair Display'; /* Имя шрифта */
-    src: url(../fonts/PlayfairDisplay-Regular.ttf); /* Путь к файлу со шрифтом */
+    font-family: 'Playfair Display';
+    src: url(../fonts/PlayfairDisplay-Regular.ttf);
 }
 
 @font-face {
-    font-family: 'Inconsolata'; /* Имя шрифта */
-    src: url(../fonts/Inconsolata-Regular.ttf); /* Путь к файлу со шрифтом */
+    font-family: 'Inconsolata';
+    src: url(../fonts/Inconsolata-Regular.ttf);
 }
 
 @font-face {
-    font-family: 'Ubuntu'; /* Имя шрифта */
-    src: url(../fonts/Ubuntu-Light.ttf); /* Путь к файлу со шрифтом */
+    font-family: 'Ubuntu';
+    src: url(../fonts/Ubuntu-Light.ttf);
 }
 
 @font-face {
-    font-family: 'Quintessential'; /* Имя шрифта */
-    src: url(../fonts/Quintessential-Regular.ttf); /* Путь к файлу со шрифтом */
+    font-family: 'Quintessential';
+    src: url(../fonts/Quintessential-Regular.ttf);
 }
 
 :root {
@@ -113,18 +113,11 @@ nav {
     justify-content: space-between;
 }
 
-/*#navbarSupportedContent {*/
-/*    width: 100%;*/
-/*    float: right;*/
-/*}*/
-
 .navbar-list {
     display: flex;
     justify-content: flex-end;
     list-style-type: none;
-    /*float: right;*/
     margin-block: 10px;
-    /*margin-right: 10px;*/
 }
 
 .navbar-list a {
@@ -140,9 +133,7 @@ header .navbar-brand {
     font-weight: 400;
     font-size: 30px;
     color: var(--black-color);
-    /* text-transform: uppercase; */
     text-decoration: none;
-    /*float: left;*/
 }
 
 header .nav-item {
@@ -248,8 +239,8 @@ header .nav-item a:hover::after {
     border-width: 0 7px 12px 7px;
     border-color: transparent transparent var(--expand-collapse-color) transparent;
     border-style: solid;
-    z-index: 2;
     cursor: pointer;
+    z-index: 2;
 }
 
 .collapse > span {
@@ -379,7 +370,6 @@ div.slider__text.sl__collapse div.content ul {
     font-size: 16px;
     font-weight: 500;
     margin-inline: 20px;
-    /*margin-right: 20px;*/
 }
 
 .cat-post ul li {
@@ -391,7 +381,6 @@ div.slider__text.sl__collapse div.content ul {
     font-family: 'Inconsolata', sans-serif;
     font-size: 16px;
     margin-inline: 20px;
-    /*margin-right: 20px;*/
 }
 
 .single-post h2 {
@@ -400,7 +389,6 @@ div.slider__text.sl__collapse div.content ul {
 
 .single-post h3 {
     margin-inline: 20px;
-    /*margin-right: 20px;*/
 }
 
 .progress,
@@ -426,7 +414,6 @@ div.slider__text.sl__collapse div.content ul {
 .grid-posts {
     display: block;
     margin-block: 10px 25px;
-    /*margin-bottom: 25px;*/
     width: 100%;
 }
 
@@ -440,7 +427,6 @@ div.slider__text.sl__collapse div.content ul {
     float: right;
     position: relative;
     padding-inline: 0;
-    /*padding-right: 0;*/
     width: calc(100% - 100px);
     background-color: var(--grid-posts-background);
     inset-block-start: 50%;
@@ -472,7 +458,6 @@ div.slider__text.sl__collapse div.content ul {
 .cb__text > div {
     position: relative;
     padding-inline: 10px 5px;
-    /*padding-right: 5px;*/
     inset-block-start: 50%;
     transform: translateY(-50%);
 }
@@ -534,7 +519,6 @@ div.slider__text.sl__collapse div.content ul {
     inset-block-start: 50%;
     transform: translateY(-50%);
     padding-block: 5px;
-    /*padding-bottom: 5px;*/
     padding-inline-end: 5px;
 }
 
@@ -607,9 +591,6 @@ div.slider__text.sl__collapse div.content ul {
     inset:0;
     height: auto;
     position: fixed;
-    /*bottom: 0;*/
-    /*right: 0;*/
-    /*left: 0;*/
     background: var(--modal-background);
     opacity: 1;
     overflow: hidden;
@@ -798,7 +779,6 @@ div.slider__text.sl__collapse div.content ul {
     flex-grow: 1;
     align-self: stretch;
     padding-inline: 10px;
-    /*padding-right: 10px;*/
     font-size: 18px;
     line-height: 35px;
 }
@@ -815,7 +795,6 @@ div.slider__text.sl__collapse div.content ul {
 .second-project div:nth-child(3),
 .third-project div:nth-child(3) {
     padding-inline: 10px;
-    /*padding-right: 10px;*/
     margin-block-end: 10px;
 }
 
@@ -941,10 +920,6 @@ footer > div {
         font-size: 18px;
     }
 
-    /*main {*/
-    /*    height: 100%;*/
-    /*}*/
-
     .current__project .wrapper {
         width: 38%;
     }
@@ -1010,11 +985,6 @@ footer > div {
     .cat-post p {
         font-size: 17px;
     }
-
-    /*footer > div {*/
-    /*    padding-inline: 15px;*/
-    /*    text-align: center;*/
-    /*}*/
 }
 
 @media only screen and (max-width: 767px) {
@@ -1024,7 +994,6 @@ footer > div {
 
     p {
         margin-inline: 10px;
-        /*margin-right: 10px;*/
     }
 
     .content h2 {
@@ -1055,13 +1024,7 @@ footer > div {
     .grid-posts,
     .grid-posts .card {
         margin-block: 30px;
-        /*margin-bottom: 30px;*/
     }
-
-    /*.grid-posts .card{*/
-    /*    margin-top: 30px;*/
-    /*    margin-bottom: 30px;*/
-    /*}*/
 
     .grid-posts .card-img-top {
         max-height: 100%;
@@ -1095,11 +1058,6 @@ footer > div {
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 575px) {
-
-    /*nav {*/
-    /*    padding: 0 15px;*/
-    /*}*/
-
     .navbar-list {
         font-size: 11px;
     }
@@ -1179,10 +1137,6 @@ footer > div {
         margin-block-start: 5px;
     }
 
-    /*nav {*/
-    /*    padding: 0 15px;*/
-    /*}*/
-
     .navbar-list { 
         display: none;
     }
@@ -1194,10 +1148,8 @@ footer > div {
 
     div.slider__text.sl__expand {
         font-size: 10px;
-        /*padding: 15px 25px;*/
         padding-block: 15px;
         padding-inline: 10px 25px;
-        /*padding-right: 25px;*/
     }
 
     .content h2 {
@@ -1210,7 +1162,6 @@ footer > div {
         text-align: justify;
         line-height: 10px;
         padding-inline: 5px;
-        /*padding-right: 5px;*/
         margin-block-start: 4px;
     }
 
@@ -1276,11 +1227,6 @@ footer > div {
         margin-block-start: 5px;
     }
 
-    /*footer > div {*/
-    /*    padding-inline: 15px;*/
-    /*    text-align: center;*/
-    /*}*/
-
     .footer-left {
         margin-block-end: 5px;
         margin-inline-end: 0;
@@ -1289,10 +1235,6 @@ footer > div {
     }
 
     .footer-right {
-        /*margin-bottom: 5px;*/
-        /*float: unset;*/
-        /*margin-right: unset;*/
-
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1303,7 +1245,6 @@ footer > div {
 @media only screen and (max-width: 300px) {
     body {
         margin-inline: 2px;
-        /*margin-right: 2px;*/
     }
 
     h2 {
@@ -1326,7 +1267,6 @@ footer > div {
 
     div.slider__text.sl__collapse div.content p {
         padding-inline: 0;
-        /*padding-right: 0px;*/
         margin: 0;
         font-size: 7px;
         line-height: 9px;
@@ -1365,7 +1305,6 @@ footer > div {
 
     .cb__text > div {
         padding-inline: 5px 0;
-        /*padding-right: 0px;*/
     }
 
     .single-post p {
