@@ -26,7 +26,7 @@
     --common-color: #626262;
     --nav-item-background: #ccc;
     --slider-text-color: #f2f2f2;
-    --slider-text-background: #0000007F;
+    --slider-text-background: #000000AF;
     --expand-collapse-color: #e31d1d;
     --dot-border-color: #ddd;
     --active-border-color: #667;
@@ -428,7 +428,6 @@ div.slider__text.sl__collapse div.content ul {
     position: relative;
     padding-inline: 0;
     width: calc(100% - 100px);
-    background-color: var(--grid-posts-background);
     inset-block-start: 50%;
     transform: translateY(-50%);
 }
@@ -438,6 +437,7 @@ div.slider__text.sl__collapse div.content ul {
     width: 20px;
     border-width: 48px 0 48px 20px;
     border-color: transparent transparent transparent var(--white-color);
+    background-color: var(--grid-posts-background);
     border-style: solid;
     float: left;
 }
@@ -452,6 +452,7 @@ div.slider__text.sl__collapse div.content ul {
     font-weight: 600;
     font-size: 22px;
     color: var(--white-color);
+    background-color: var(--grid-posts-background);
     margin: 0 auto;
 }
 
@@ -464,7 +465,7 @@ div.slider__text.sl__collapse div.content ul {
 
 .grid-posts .card-body .cb__end {
     height: 100%;
-    width: 45px;
+    width: 50px;
     background: var(--white-color);
     border-width: 49px 0 48px 44px;
     border-color: transparent transparent transparent var(--grid-posts-background);
@@ -1195,7 +1196,7 @@ footer > div {
         margin-inline-end: 12px;
     }
 
-    ,arrow-left {
+    .arrow-left {
         margin-inline-start: 12px;
     }
 
