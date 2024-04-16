@@ -1,0 +1,13 @@
+  <div class="col-md-3">
+           <div class="nav" style="padding-top:10px; padding-bottom:10px;">
+          <ul class="nav" style="width:240px;border-right: 2px solid #E6E6FA;padding-right: 10px;padding-left: 10px;">
+              
+               <li ng-repeat="itm in sideMenu()" class="{{subLi[checkSubItem(itm.index)]}}" style="{{subStyle[checkSubItem(itm.index)]}}">
+                      <a href="{{itm.link}}" class="{{subHref[checkSubItem(itm.index)]}}" ng-click="setSubMenu(itm.index)">{{itm.name[checkLang()]}} </a>
+            </li>
+
+                   </ul>
+               </div>
+ 
+        </div> 
+     
