@@ -1,0 +1,51 @@
+ERROR: 28-05-2022 19:19:09 DB: cannot get query: [call from getQuery] You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''products'' at line 1
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\database.php Line 89
+
+ERROR: 28-05-2022 19:25:22 DB: cannot get query: Unknown character set: 'UTF-8'
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\database.php Line 34
+
+ERROR: 28-05-2022 19:25:22 DB: cannot get query: [call from getQuery] DB: cannot get query: 
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\database.php Line 89
+
+ERROR: 28-05-2022 19:29:33 DB: cannot get query: Unknown character set: 'UTF-8'
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\database.php Line 34
+
+ERROR: 28-05-2022 19:29:33 DB: cannot get query: [call from getQuery] DB: cannot get query: 
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\database.php Line 89
+
+ERROR: 28-05-2022 19:32:27 DB: cannot get query: CCCUnknown character set: 'UTF-8'
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\database.php Line 34
+
+ERROR: 28-05-2022 19:32:27 DB: cannot get query: [call from getQuery] DB: cannot get query: 
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\database.php Line 89
+
+ERROR: 28-05-2022 19:35:19 DB: cannot get query: [call from getQuery] TWO You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''products'' at line 1
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\database.php Line 89
+
+ERROR: 28-05-2022 19:35:51 DB: cannot get query: [call from getQuery] TWO Unknown character set: 'UTF-8'
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\database.php Line 89
+
+ERROR: 28-05-2022 19:41:20 DB: cannot get query: [call from getQuery] Access denied for user 'users'@'localhost' (using password: YES)
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\database.php Line 95
+
+ERROR: 28-05-2022 19:43:04 DB: cannot get query: [call from getQuery] Access denied for user 'users'@'localhost' (using password: YES)
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\database.php Line 100
+
+ERROR: 28-05-2022 19:44:00 DB: cannot get query: [call from getQuery] Access denied for user 'users'@'localhost' (using password: YES)
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\database.php Line 100
+
+ERROR: 28-05-2022 19:49:13 DB: cannot get query: [call from getQuery] Access denied for user 'users'@'localhost' (using password: YES)
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\database.php Line 100
+
+ERROR: 28-05-2022 19:49:26 DB: cannot get query: [call from getQuery] Access denied for user 'users'@'localhost' (using password: YES)
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\database.php Line 100
+
+ERROR: 28-05-2022 19:52:53 DB: cannot get query: [call from getQuery] Access denied for user 'users'@'localhost' (using password: YES)
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\database.php Line 101
+
+ERROR: 28-05-2022 20:00:42 DB: cannot get query: [call from getQuery] Access denied for user 'users'@'localhost' (using password: YES)
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\database.php Line 101
+
+ERROR: 28-05-2022 20:02:04 DB: cannot get query: [call from getQuery] TWO You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''products'' at line 1
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\database.php Line 96
+

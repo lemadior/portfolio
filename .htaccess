@@ -1,0 +1,15 @@
+Options +FollowSymLinks
+
+AddDefaultCharset utf-8
+DirectoryIndex index.php
+
+RewriteEngine on
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !favicon.ico
+
+RewriteRule ^.*$ index.php [L]
+
+php_value display_startup_errors 1

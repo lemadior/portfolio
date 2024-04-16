@@ -1,0 +1,35 @@
+ERROR: 24-05-2022 10:59:09-Sorry, page not found. Check address or try again!
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\route.php
+ In line 52
+
+ERROR: 24-05-2022 11:00:46-Sorry, page not found. Check address or try again!
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\route.php
+ In line 52
+
+ERROR: 24-05-2022 11:01:27-Sorry, page not found. Check address or try again!
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\route.php
+ In line 52
+
+ERROR: 24-05-2022 11:03:21-Controller Error : application/controllers/controller_sjc.php
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\route.php
+ In line 52
+
+ERROR: 24-05-2022 11:04:33 Controller Error : application/controllers/controller_dsj.php
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\route.php
+ In line 52
+
+ERROR: 24-05-2022 14:33:01 Controller Error : application/controllers/controller_dskjcn.php
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\route.php Line 52
+
+ERROR: 25-05-2022 13:45:34 Controller Error : application/controllers/controller_hnap1.php
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\route.php Line 50
+
+ERROR: 29-05-2022 9:16:23 Controller Error : application/controllers/controller_hnap1.php
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\route.php Line 50
+
+ERROR: 02-06-2022 19:08:58 Controller Error : application/controllers/controller_css.php
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\route.php Line 52
+
+ERROR: 05-06-2022 8:59:39 Controller Error : application/controllers/controller_calen.php
+file 'C:\OpenServer\domains\scandiweb.local.net\application\core\route.php Line 52
+
