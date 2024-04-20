@@ -1,22 +1,24 @@
-<a href='http://github.com/angular/angular.js/edit/master/docs/content/tutorial/step_08.ngdoc' class='improve-docs btn btn-primary'><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this doc</a>
+<a class='improve-docs btn btn-primary'
+   href='http://github.com/angular/angular.js/edit/master/docs/content/tutorial/step_08.ngdoc'><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this doc</a>
 
 
 <ul doc-tutorial-nav="8"></ul>
 
 
 <p>In this step, you will implement the phone details view, which is displayed when a user clicks on a
-phone in the phone list.</p>
+    phone in the phone list.</p>
 <div doc-tutorial-reset="8"></div>
 
 
 <p>Now when you click on a phone on the list, the phone details page with phone-specific information
-is displayed.</p>
+    is displayed.</p>
 <p>To implement the phone details view we will use <a href="api/ng/service/$http">$http</a> to fetch
-our data, and we&#39;ll flesh out the <code>phone-detail.html</code> view template.</p>
-<p>The most important changes are listed below. You can see the full diff on <a href="https://github.com/angular/angular-phonecat/compare/step-7...step-8">GitHub</a>:</p>
+    our data, and we&#39;ll flesh out the <code>phone-detail.html</code> view template.</p>
+<p>The most important changes are listed below. You can see the full diff on <a
+        href="https://github.com/angular/angular-phonecat/compare/step-7...step-8">GitHub</a>:</p>
 <h2 id="data">Data</h2>
 <p>In addition to <code>phones.json</code>, the <code>app/phones/</code> directory also contains one json file for each
-phone:</p>
+    phone:</p>
 <p><strong><code>app/phones/nexus-s.json</code>:</strong> (sample snippet)</p>
 <pre><code class="lang-js">{
   &quot;additionalFeatures&quot;: &quot;Contour Display, Near Field Communications (NFC),...&quot;,
@@ -37,10 +39,11 @@ phone:</p>
   }
 }</code></pre>
 <p>Each of these files describes various properties of the phone using the same data structure. We&#39;ll
-show this data in the phone detail view.</p>
+    show this data in the phone detail view.</p>
 <h2 id="controller">Controller</h2>
-<p>We&#39;ll expand the <code>PhoneDetailCtrl</code> by using the <code>$http</code> service to fetch the json files. This works
-the same way as the phone list controller.</p>
+<p>We&#39;ll expand the <code>PhoneDetailCtrl</code> by using the <code>$http</code> service to fetch the json files.
+    This works
+    the same way as the phone list controller.</p>
 <p><strong><code>app/js/controllers.js</code>:</strong></p>
 <pre><code class="lang-js">var phonecatControllers = angular.module(&#39;phonecatControllers&#39;,[]);
 
@@ -51,11 +54,12 @@ phonecatControllers.controller(&#39;PhoneDetailCtrl&#39;, [&#39;$scope&#39;, &#3
     });
   }]);</code></pre>
 <p>To construct the URL for the HTTP request, we use <code>$routeParams.phoneId</code> extracted from the current
-route by the <code>$route</code> service.</p>
+    route by the <code>$route</code> service.</p>
 <h2 id="template">Template</h2>
 <p>The TBD placeholder line has been replaced with lists and bindings that comprise the phone details.
-Note where we use the Angular <code>{{expression}}</code> markup and <code>ngRepeat</code> to project phone data from
-our model into the view.</p>
+    Note where we use the Angular <code>{{expression}}</code> markup and <code>ngRepeat</code> to project phone data
+    from
+    our model into the view.</p>
 <p><strong><code>app/partials/phone-detail.html</code>:</strong></p>
 <pre><code class="lang-html">&lt;img ng-src=&quot;{{phone.images[0]}}&quot; class=&quot;phone&quot;&gt;
 
@@ -84,13 +88,13 @@ our model into the view.</p>
   &lt;/li&gt;
 &lt;/ul&gt;</code></pre>
 <div style="display: none">
-TODO!
-<img  class="diagram" src="img/tutorial/tutorial_08-09_final.png">
+    TODO!
+    <img class="diagram" src="img/tutorial/tutorial_08-09_final.png">
 </div>
 
 <h2 id="test">Test</h2>
 <p>We wrote a new unit test that is similar to the one we wrote for the <code>PhoneListCtrl</code> controller in
-step 5.</p>
+    step 5.</p>
 <p><strong><code>test/unit/controllersSpec.js</code>:</strong></p>
 <pre><code class="lang-js">...
   describe(&#39;PhoneDetailCtrl&#39;, function(){
@@ -117,7 +121,7 @@ step 5.</p>
 <p>You should now see the following output in the Karma tab:</p>
 <pre><code>Chrome 22.0: Executed 3 of 3 SUCCESS (0.039 secs / 0.012 secs)</code></pre>
 <p>We also added a new end-to-end test that navigates to the Nexus S detail page and verifies that the
-heading on the page is &quot;Nexus S&quot;.</p>
+    heading on the page is &quot;Nexus S&quot;.</p>
 <p><strong><code>test/e2e/scenarios.js</code>:</strong></p>
 <pre><code class="lang-js">...
   describe(&#39;Phone detail view&#39;, function() {
@@ -135,11 +139,12 @@ heading on the page is &quot;Nexus S&quot;.</p>
 <p>You can now rerun <code>npm run protractor</code> to see the tests run.</p>
 <h1 id="experiments">Experiments</h1>
 <ul>
-<li>Using the <a href="guide/dev_guide.e2e-testing">Angular&#39;s end-to-end test runner API</a>, write a test
-that verifies that we display 4 thumbnail images on the Nexus S details page.</li>
+    <li>Using the <a href="guide/dev_guide.e2e-testing">Angular&#39;s end-to-end test runner API</a>, write a test
+        that verifies that we display 4 thumbnail images on the Nexus S details page.
+    </li>
 </ul>
 <h1 id="summary">Summary</h1>
 <p>Now that the phone details view is in place, proceed to <a href="tutorial/step_09">step 9</a> to learn how to
-write your own custom display filter.</p>
+    write your own custom display filter.</p>
 <ul doc-tutorial-nav="8"></ul>
 

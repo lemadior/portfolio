@@ -1,18 +1,21 @@
-<a href='http://github.com/angular/angular.js/edit/master/docs/content/error/$compile/iscp.ngdoc' class='improve-docs btn btn-primary'><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this doc</a>
+<a class='improve-docs btn btn-primary'
+   href='http://github.com/angular/angular.js/edit/master/docs/content/error/$compile/iscp.ngdoc'><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this doc</a>
 
 
 <h1>Error: $compile:iscp
-  <div><span class='hint'>Invalid Isolate Scope Definition</span></div>
+    <div><span class='hint'>Invalid Isolate Scope Definition</span></div>
 </h1>
 
 <div>
-    <pre class="minerr-errmsg" error-display="Invalid isolate scope definition for directive '{0}'. Definition: {... {1}: '{2}' ...}">Invalid isolate scope definition for directive '{0}'. Definition: {... {1}: '{2}' ...}</pre>
+    <pre class="minerr-errmsg"
+         error-display="Invalid isolate scope definition for directive '{0}'. Definition: {... {1}: '{2}' ...}">Invalid isolate scope definition for directive '{0}'. Definition: {... {1}: '{2}' ...}</pre>
 </div>
 
 <h2>Description</h2>
 <div class="description">
-  <p>When declaring isolate scope the scope definition object must be in specific format which starts with mode character (<code>@&amp;=</code>) with an optional local name.</p>
-<pre><code>myModule.directive(&#39;directiveName&#39;, function factory() {
+    <p>When declaring isolate scope the scope definition object must be in specific format which starts with mode
+        character (<code>@&amp;=</code>) with an optional local name.</p>
+    <pre><code>myModule.directive(&#39;directiveName&#39;, function factory() {
   return {
     ...
     scope: {
@@ -25,7 +28,9 @@
     ...
   }
 });</code></pre>
-<p>Please refer to the <a href="api/ng/service/$compile#description_comprehensive-directive-api_directive-definition-object"><code>scope</code> option</a> of the directive definition documentation to learn more about the API.</p>
+    <p>Please refer to the <a
+            href="api/ng/service/$compile#description_comprehensive-directive-api_directive-definition-object"><code>scope</code>
+        option</a> of the directive definition documentation to learn more about the API.</p>
 
 </div>
 

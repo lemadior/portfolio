@@ -1,94 +1,103 @@
-
- 
 <!-- Modal Window. Must have id the same as name of page! -->
-  <div class="modal fade" id="contacts" tabindex="-1" role="dialog" aria-hidden="true">
+<div aria-hidden="true" class="modal fade" id="contacts" role="dialog" tabindex="-1">
     <div class="modal-dialog" style="{{ curmap.width }} padding-top:5px;padding-bottom:5px;">
-      <div class="modal-content" style="padding-top:5px;padding-bottom:0px;">
-        <div class="modal-header" style="padding-top:4px;padding-bottom:5px;">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h5 class="modal-title"><strong>{{ curmap.caption }}</strong></h5>
-        </div>
-        <div class="modal-body" style="text-align: center; padding-top:14px;padding-bottom:0px;vertical-align:middle; padding-left:5px;padding-right:5px;">
-	  <img src="{{ curmap.imageURL }}">
-        </div>
-       <div class="modal-footer " style="text-align: left;padding-top:5px;padding-bottom:5px;">
-                    <small>{{ curmap.description }}</small>
-        <!--  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button> -->
-        </div>
-      </div>
-    </div>
-  </div>
-
-   
-<div class="row">
-          
-    <!-- SIDEBAR --> 
-    
-     <div ng-include src="'partials/include/sidebar.html' "></div>
-
-    
-<div class="col-md-9 " style="margin-top:0px;font-size:small;">
-            
-            <div ng-include src="'partials/include/pageheader.html' "></div>
-            
-          <div class="col-md-9" style="width:280px;padding-top:50px;">
-              <span class="label label-primary" style="margin-bottom:15px;padding:4px;">{{langCtrlData.address[checkLang()]}}</span><br>
-           <p style=" padding-top:5px;">
-              <small ><strong>{{langCtrlData.office[checkLang()]}}</strong> </small>
-                    <a href="#contacts" role="button" ng-click="setMap(0)" data-toggle="modal" class="btn btn-xs label label-success pull-right" style="margin:0px;padding:3px;">
-                      {{langCtrlData.scheme[checkLang()]}}</a>
-             <br>
-               {{langCtrlData.addressOF1[checkLang()]}} <br>
-               {{langCtrlData.addressOF2[checkLang()]}} <br>
-              </p>
-              <p style=" padding-top:10px;">
-              <small><strong> {{langCtrlData.base[checkLang()]}}</strong>   </small>
-                <a href="#contacts" role="button" ng-click="setMap(1)" data-toggle="modal" class="btn btn-xs label label-success pull-right" style="margin:0px;padding:3px;">
-                       {{langCtrlData.scheme[checkLang()]}}</a>
-            <br>
-              {{langCtrlData.addressOF1[checkLang()]}}<br>
-              {{langCtrlData.baseADR1[checkLang()]}}<br>
-              </p>
-          </div>
-    
-          <div class="col-md-10" style="padding-top: 10px;">
-              
-              <div class="col-md-5" style="padding-left:0px;">
-              <span class="label label-primary" style="margin-bottom:15px;padding:4px;"> {{langCtrlData.contacts[checkLang()]}}</span>
-             <p style=" padding-top:10px;"> 
-                <small ><strong> {{langCtrlData.office[checkLang()]}}</strong></small><br>
-                  {{langCtrlData.phone[checkLang()]}}: 5-55-55<br>
-               <span class="label label-default col-sm-offset-4" style="margin:1px;margin-right: 10px; padding-top:1px; padding-bottom:1px; "> {{langCtrlData.secretary[checkLang()]}}</span>Тел. : +38 012 3456 789 <br>
-               <span class="label label-default col-sm-offset-4" style="margin:1px;margin-right: 10px; padding-top:1px; padding-bottom:1px; ">Директор</span>Тел. : +38 012 3456 789
-              <br>
-              Email: <em style="color: #008"><a href="mailto:admin@local.net">admin@local.net</a></em></p>
-             <p style=" padding-top:10px;">
-                  <small><strong> {{langCtrlData.base[checkLang()]}}</strong></small><br>
-               <span class="label label-default col-sm-offset-4" style="margin:1px;margin-right: 10px; padding-top:1px; padding-bottom:1px; ">{{langCtrlData.secretary[checkLang()]}}</span>Тел. : +38 012 3456 789 <br>
-               <span class="label label-default col-sm-offset-4" style="margin:1px;margin-right: 10px; padding-top:1px; padding-bottom:1px; ">{{langCtrlData.manager[checkLang()]}}</span>Тел. : +38 012 3456 789<br> (до 18:00)
-              <br>
-             </p>
-          </div>
-    
-           <div class="col-md-7" style="padding-left:120px;">
-              <span class="label label-primary" style="margin-bottom:15px;padding:4px;">{{langCtrlData.operation[checkLang()]}}</span>
-                <p style=" padding-top:10px;width: 400px;">{{langCtrlData.oprText1[checkLang()]}} <br>
-              {{langCtrlData.oprText2[checkLang()]}} <br></p>
-              </div>
-              
-            <div class="col-md-7" style="padding-left:120px;">
-              <span class="label label-primary " style="margin-bottom:15px;padding:4px;">{{langCtrlData.time[checkLang()]}} </span> 
-             <p style=" padding-top:10px;width: 400px;"> {{langCtrlData.timeText[checkLang()]}}  <br></p>
+        <div class="modal-content" style="padding-top:5px;padding-bottom:0px;">
+            <div class="modal-header" style="padding-top:4px;padding-bottom:5px;">
+                <button aria-hidden="true" class="close" data-dismiss="modal" type="button">&times;</button>
+                <h5 class="modal-title"><strong>{{ curmap.caption }}</strong></h5>
             </div>
- 
-      </div>
-    
-     <!-- Image on bottom-right -->
-         <div class="row" style="float: right;margin-bottom:10px;padding-bottom:10px;padding-top:10px;">
-             <img src="images/Office.jpg" style="border: solid gray; border-width: thin;" alt="Office">
-             </div>
-     
+            <div class="modal-body"
+                 style="text-align: center; padding-top:14px;padding-bottom:0px;vertical-align:middle; padding-left:5px;padding-right:5px;">
+                <img src="{{ curmap.imageURL }}">
+            </div>
+            <div class="modal-footer " style="text-align: left;padding-top:5px;padding-bottom:5px;">
+                <small>{{ curmap.description }}</small>
+                <!--  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+        </div>
+    </div>
 </div>
-   
-     </div>
+
+
+<div class="row">
+
+    <!-- SIDEBAR -->
+
+    <div ng-include src="'partials/include/sidebar.html' "></div>
+
+
+    <div class="col-md-9 " style="margin-top:0px;font-size:small;">
+
+        <div ng-include src="'partials/include/pageheader.html' "></div>
+
+        <div class="col-md-9" style="width:280px;padding-top:50px;">
+            <span class="label label-primary" style="margin-bottom:15px;padding:4px;">{{langCtrlData.address[checkLang()]}}</span><br>
+            <p style=" padding-top:5px;">
+                <small><strong>{{langCtrlData.office[checkLang()]}}</strong> </small>
+                <a class="btn btn-xs label label-success pull-right" data-toggle="modal" href="#contacts" ng-click="setMap(0)"
+                   role="button" style="margin:0px;padding:3px;">
+                    {{langCtrlData.scheme[checkLang()]}}</a>
+                <br>
+                {{langCtrlData.addressOF1[checkLang()]}} <br>
+                {{langCtrlData.addressOF2[checkLang()]}} <br>
+            </p>
+            <p style=" padding-top:10px;">
+                <small><strong> {{langCtrlData.base[checkLang()]}}</strong> </small>
+                <a class="btn btn-xs label label-success pull-right" data-toggle="modal" href="#contacts" ng-click="setMap(1)"
+                   role="button" style="margin:0px;padding:3px;">
+                    {{langCtrlData.scheme[checkLang()]}}</a>
+                <br>
+                {{langCtrlData.addressOF1[checkLang()]}}<br>
+                {{langCtrlData.baseADR1[checkLang()]}}<br>
+            </p>
+        </div>
+
+        <div class="col-md-10" style="padding-top: 10px;">
+
+            <div class="col-md-5" style="padding-left:0px;">
+                <span class="label label-primary" style="margin-bottom:15px;padding:4px;"> {{langCtrlData.contacts[checkLang()]}}</span>
+                <p style=" padding-top:10px;">
+                    <small><strong> {{langCtrlData.office[checkLang()]}}</strong></small><br>
+                    {{langCtrlData.phone[checkLang()]}}: 5-55-55<br>
+                    <span class="label label-default col-sm-offset-4"
+                          style="margin:1px;margin-right: 10px; padding-top:1px; padding-bottom:1px; "> {{langCtrlData.secretary[checkLang()]}}</span>Тел.
+                    : +38 012 3456 789 <br>
+                    <span class="label label-default col-sm-offset-4"
+                          style="margin:1px;margin-right: 10px; padding-top:1px; padding-bottom:1px; ">Директор</span>Тел.
+                    : +38 012 3456 789
+                    <br>
+                    Email: <em style="color: #008"><a href="mailto:admin@local.net">admin@local.net</a></em></p>
+                <p style=" padding-top:10px;">
+                    <small><strong> {{langCtrlData.base[checkLang()]}}</strong></small><br>
+                    <span class="label label-default col-sm-offset-4"
+                          style="margin:1px;margin-right: 10px; padding-top:1px; padding-bottom:1px; ">{{langCtrlData.secretary[checkLang()]}}</span>Тел.
+                    : +38 012 3456 789 <br>
+                    <span class="label label-default col-sm-offset-4"
+                          style="margin:1px;margin-right: 10px; padding-top:1px; padding-bottom:1px; ">{{langCtrlData.manager[checkLang()]}}</span>Тел.
+                    : +38 012 3456 789<br> (до 18:00)
+                    <br>
+                </p>
+            </div>
+
+            <div class="col-md-7" style="padding-left:120px;">
+                <span class="label label-primary" style="margin-bottom:15px;padding:4px;">{{langCtrlData.operation[checkLang()]}}</span>
+                <p style=" padding-top:10px;width: 400px;">{{langCtrlData.oprText1[checkLang()]}} <br>
+                    {{langCtrlData.oprText2[checkLang()]}} <br></p>
+            </div>
+
+            <div class="col-md-7" style="padding-left:120px;">
+                <span class="label label-primary " style="margin-bottom:15px;padding:4px;">{{langCtrlData.time[checkLang()]}} </span>
+                <p style=" padding-top:10px;width: 400px;"> {{langCtrlData.timeText[checkLang()]}} <br></p>
+            </div>
+
+        </div>
+
+        <!-- Image on bottom-right -->
+        <div class="row" style="float: right;margin-bottom:10px;padding-bottom:10px;padding-top:10px;">
+            <img alt="Office" src="images/Office.jpg" style="border: solid gray; border-width: thin;">
+        </div>
+
+    </div>
+
+</div>

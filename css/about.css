@@ -53,7 +53,7 @@ html, body {
 
 .message h3 {
     width: 50%;
-    border-bottom: 1px solid gray; 
+    border-bottom: 1px solid gray;
     text-align: center;
     margin: 10px auto;
     padding-bottom: 5px;
@@ -96,7 +96,7 @@ html, body {
 
 .lang a {
     color: gray;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: 400;
     font-size: 16px;
     margin-left: 10px;

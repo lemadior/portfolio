@@ -1,30 +1,29 @@
-  
-      <div class="row">
-          
-          <div ng-include src="'partials/include/sidebar.html' "></div>
-         
- 
-<div class="col-md-9 " style="margin-top:0px;font-size:small;padding-bottom:10px;">
-            
-            <div ng-include src="'partials/include/pageheader.html' "></div>
-            
+<div class="row">
 
-    <div class="col-md-9" style="text-align:justify;padding-top:20px;">
+    <div ng-include src="'partials/include/sidebar.html' "></div>
 
-        <p>{{langCtrlData.text1[checkLang()]}}</p>
-        <p>{{langCtrlData.text2[checkLang()]}} </p>
-           <p>{{langCtrlData.text3[checkLang()]}}</p>
-           
-              <ul class="col-md-offset-1">
-                    <li >{{langCtrlData.text4[checkLang()]}}</li>
-                    <li>{{langCtrlData.text5[checkLang()]}}</li>
-                </ul>  
-              <em style="margin-bottom:7px;">{{langCtrlData.text6[checkLang()]}}</em>
-          </div>
-             <div class="col-md-2" style="padding-top:20px">
-                     <img src="images/setting.jpg" alt="montage" style="border: solid gray; border-width: thin;">
-             </div>
 
-</div>
-          
+    <div class="col-md-9 " style="margin-top:0px;font-size:small;padding-bottom:10px;">
+
+        <div ng-include src="'partials/include/pageheader.html' "></div>
+
+
+        <div class="col-md-9" style="text-align:justify;padding-top:20px;">
+
+            <p>{{langCtrlData.text1[checkLang()]}}</p>
+            <p>{{langCtrlData.text2[checkLang()]}} </p>
+            <p>{{langCtrlData.text3[checkLang()]}}</p>
+
+            <ul class="col-md-offset-1">
+                <li>{{langCtrlData.text4[checkLang()]}}</li>
+                <li>{{langCtrlData.text5[checkLang()]}}</li>
+            </ul>
+            <em style="margin-bottom:7px;">{{langCtrlData.text6[checkLang()]}}</em>
+        </div>
+        <div class="col-md-2" style="padding-top:20px">
+            <img alt="montage" src="images/setting.jpg" style="border: solid gray; border-width: thin;">
+        </div>
+
+    </div>
+
 </div>    

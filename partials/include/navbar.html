@@ -1,46 +1,50 @@
-  <!-- Navbar
-    ================================================== --> 
+<!-- Navbar
+  ================================================== -->
 
-   <nav class="navbar navbar-inverse navbar-static-top " role="navigation">
+<nav class="navbar navbar-inverse navbar-static-top " role="navigation">
     <div class="container">
 
         <div class="navbar-header">
-                <a href="{{ brandhref() }}" ng-click="setClass(Dropmenu[0].url)" class="navbar-brand">{{ Dropmenu[0].text[checkLang()] }}</a>
+            <a class="navbar-brand" href="{{ brandhref() }}" ng-click="setClass(Dropmenu[0].url)">{{
+                Dropmenu[0].text[checkLang()] }}</a>
         </div>
-    
-     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
 
-                        <li class="divider"></li>
-                        <li class="dropdown">
-                                 <a href="" class="dropdown-toggle" data-toggle="dropdown">{{Dropmenu[Dropmenu.length-1].text[checkLang()]}}<b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                        <li ng-repeat="item in submenu" ng-class="{disabled:checkClass(item.url)}">
-                                                <a href="{{ item.url }}"  ng-click="setClass(item.url)">{{ item.text[checkLang()] }}</a>
-                                        </li>
-                                </ul>
+                <li class="divider"></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">{{Dropmenu[Dropmenu.length-1].text[checkLang()]}}<b
+                            class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li ng-class="{disabled:checkClass(item.url)}" ng-repeat="item in submenu">
+                            <a href="{{ item.url }}" ng-click="setClass(item.url)">{{ item.text[checkLang()] }}</a>
                         </li>
+                    </ul>
+                </li>
 
-                        <li  ng-repeat="item in menu" ng-if="!$first" ng-class="{disabled:checkClass(item.url)}" >
-                                <a href="{{item.url}}" ng-click="setClass(item.url)">{{ item.text[checkLang()] }} </a>
-                        </li>
-                      
-     <!--   <li><a>{{ URRL }} : {{Switch()}}</a></li> -->
-             </ul>
-      
+                <li ng-class="{disabled:checkClass(item.url)}" ng-if="!$first" ng-repeat="item in menu">
+                    <a href="{{item.url}}" ng-click="setClass(item.url)">{{ item.text[checkLang()] }} </a>
+                </li>
+
+                <!--   <li><a>{{ URRL }} : {{Switch()}}</a></li> -->
+            </ul>
+
             <div class="nav navbar-nav navbar-right" style="padding-top:7px;">
-                    <a class="btn btn-xs {{langButtonUA}}" type="button" role="button" ng-click="setLANG()" style="text-decoration: none;margin:0px;padding-top:0px;padding-bottom:0px;">
-                        <strong><small>УКР</small></strong>
-                    </a>
-                    <a class="btn btn-xs {{langButtonRU}}" type="button" role="button" ng-click="setLANG()" style="text-decoration: none;margin:0px;padding-top:0px;padding-bottom:0px;">
-                        <strong><small>РУС</small></strong>
-                    </a>
+                <a class="btn btn-xs {{langButtonUA}}" ng-click="setLANG()" role="button" style="text-decoration: none;margin:0px;padding-top:0px;padding-bottom:0px;"
+                   type="button">
+                    <strong><small>УКР</small></strong>
+                </a>
+                <a class="btn btn-xs {{langButtonRU}}" ng-click="setLANG()" role="button" style="text-decoration: none;margin:0px;padding-top:0px;padding-bottom:0px;"
+                   type="button">
+                    <strong><small>РУС</small></strong>
+                </a>
             </div>
-        
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-  
+
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+
 </nav>
      
      

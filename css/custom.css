@@ -1,34 +1,49 @@
-*{margin: 0; padding: 0;} /* обнуляем отступы */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* обнуляем отступы */
 
 /* Reduce navbar height
 -------------------------------------------------- */
 
-.navbar{min-height:28px !important;}
-.navbar-brand {padding:7px!important;height:28px!important;}
-.navbar-nav >li > a {padding-top:7px !important; padding-bottom:7px !important;}
+.navbar {
+    min-height: 28px !important;
+}
 
+.navbar-brand {
+    padding: 7px !important;
+    height: 28px !important;
+}
 
+.navbar-nav > li > a {
+    padding-top: 7px !important;
+    padding-bottom: 7px !important;
+}
 
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  position: relative;
-  min-height:100%;
+    position: relative;
+    min-height: 100%;
 }
+
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 28px;
- height: 100% ;
+    /* Margin bottom by footer height */
+    margin-bottom: 28px;
+    height: 100%;
     /* min-height:100% !important; */
 }
+
 #footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  min-height: 28px;
-  background-color: #010101;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    min-height: 28px;
+    background-color: #010101;
 }
 
 
@@ -37,136 +52,142 @@ body {
 /* Not required for template or sticky footer method. */
 
 body > .container {
-  padding: 28px 7px 0;
+    padding: 28px 7px 0;
 }
+
 .container .text-muted {
-  margin: 7px 0;
+    margin: 7px 0;
 }
 
 #footer > .container {
-  padding-right: 7px;
-  padding-left: 7px;
+    padding-right: 7px;
+    padding-left: 7px;
 }
 
 code {
-  font-size: 80%;
+    font-size: 80%;
 }
 
 /* Hide for mobile, show later */
 .sidebar {
-  display: none;
+    display: none;
 }
 
 @media (min-width: 768px) {
-  .sidebar {
-    position: fixed;
-    top: 51px;
-    bottom: 48px;
-    left: 0;
-    padding-right: 2px;
-/*    z-index: 1000;*/
-    display: block;
-    padding: 20px;
-    overflow-x: hidden;
-    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-    /*background-color: #f5f5f5;*/
-   
-  .site-wrapper-inner {
-    vertical-align: middle;
-  }
-    
+    .sidebar {
+        position: fixed;
+        top: 51px;
+        bottom: 48px;
+        left: 0;
+        padding-right: 2px;
+        /*    z-index: 1000;*/
+        display: block;
+        padding: 20px;
+        overflow-x: hidden;
+        overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+        /*background-color: #f5f5f5;*/
 
-    
-  }
-  
-   .main {
-    padding-right: 40px;
-    padding-left: 40px;
-  }
-  
+        .site-wrapper-inner {
+            vertical-align: middle;
+        }
+
+
+    }
+
+    .main {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+
 }
 
 /* Sidebar navigation */
 .nav-sidebar {
-  margin-right: -21px; /* 20px padding + 1px border */
-  margin-bottom: 20px;
-  margin-left: -20px;
+    margin-right: -21px; /* 20px padding + 1px border */
+    margin-bottom: 20px;
+    margin-left: -20px;
 }
+
 .nav-sidebar > li > a {
-  padding-right: 20px;
-  padding-left: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
+
 .nav-sidebar > .active > a {
-  color: #fff;
-  background-color: #428bca;
+    color: #fff;
+    background-color: #428bca;
 }
 
 .disactive {
-  padding-right: 20px;
-  padding-left: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 .main {
-  padding: 20px;
+    padding: 20px;
 }
 
 .main .page-header {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 .placeholders {
-  margin-bottom: 30px;
-  text-align: center;
-}
-.placeholders h4 {
-  margin-bottom: 0;
-}
-.placeholder {
-  margin-bottom: 20px;
-}
-.placeholder img {
-  display: inline-block;
-  border-radius: 50%;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
+.placeholders h4 {
+    margin-bottom: 0;
+}
+
+.placeholder {
+    margin-bottom: 20px;
+}
+
+.placeholder img {
+    display: inline-block;
+    border-radius: 50%;
+}
 
 
 .nav a {
-color:  #666666;
+    color: #666666;
 }
 
 .nav a:hover {
-	color: #404040;
+    color: #404040;
 }
 
 .center-block {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
-    .site-wrapper {
-  display: table;
-  width: 100%;
-  height: 100%; /* For at least Firefox */
-  min-height: 100%;
+.site-wrapper {
+    display: table;
+    width: 100%;
+    height: 100%; /* For at least Firefox */
+    min-height: 100%;
 
 }
+
 .site-wrapper-inner {
-  display: table-cell;
-  vertical-align: top;
+    display: table-cell;
+    vertical-align: top;
 }
+
 .cover-container {
-  margin-right: auto;
-  margin-left: auto;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .pager {
-	margin-left:3px;
-	margin-right:3px;
-	}
+    margin-left: 3px;
+    margin-right: 3px;
+}
 
 .pager a:active {
-		color:gray;
-	}
+    color: gray;
+}

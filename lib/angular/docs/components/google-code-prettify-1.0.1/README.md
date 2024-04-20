@@ -12,7 +12,6 @@ or [Yeoman](http://yeoman.io/)
 
 	yeoman install google-code-prettify
 
-
 ## Usage
 
 The prettify script is AMD compatible and can be used modularly. Here is an example of it in an AMD module:
@@ -28,7 +27,8 @@ define(['jquery', 'prettify'], function($, prettify){
 });
 ```
 
-This version of google-code-prettify defines an anonymous module, which is more flexible.  To allow your AMD loader to find google-code-prettify with a more convenient name, map a path to it as follows:
+This version of google-code-prettify defines an anonymous module, which is more flexible. To allow your AMD loader to
+find google-code-prettify with a more convenient name, map a path to it as follows:
 
 ```js
 // using RequireJS
@@ -51,4 +51,5 @@ Or it may just be used in a global context like the following:
 })();
 ```
 
-More information can be found in the original [README.html](http://google-code-prettify.googlecode.com/svn/trunk/README.html)
+More information can be found in the
+original [README.html](http://google-code-prettify.googlecode.com/svn/trunk/README.html)

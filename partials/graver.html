@@ -1,34 +1,33 @@
-
 <div class="row">
-          
-     <div ng-include src="'partials/include/sidebar.html' "></div>
-      
-    
-<div class="col-md-9 " style="margin-top:0px;font-size:small;padding-left:25px;">
-            
-            <div ng-include src="'partials/include/pageheader.html' "></div>
-            
-          <div class="row" style="text-align:justify;padding-top:50px;padding-left: 10px;">
+
+    <div ng-include src="'partials/include/sidebar.html' "></div>
+
+
+    <div class="col-md-9 " style="margin-top:0px;font-size:small;padding-left:25px;">
+
+        <div ng-include src="'partials/include/pageheader.html' "></div>
+
+        <div class="row" style="text-align:justify;padding-top:50px;padding-left: 10px;">
             <p>{{langCtrlData.text1[checkLang()]}}</p>
-              <p>{{langCtrlData.text2[checkLang()]}}</p>
-              <p>{{langCtrlData.text3[checkLang()]}}</p>
-              <p>{{langCtrlData.text4[checkLang()]}}</p>
-              <p>{{langCtrlData.text5[checkLang()]}}</p>
-              <p>{{langCtrlData.text6[checkLang()]}} </p>
-              <p>{{langCtrlData.text7[checkLang()]}}</p>
-          <div class="row" style="padding-top:10px; padding-bottom: 35px; width: 100%;">
-                  <div class="col-md-6 text-center">
-                   <p><strong>{{langCtrlData.caption1[checkLang()]}}</strong></p>
-                        <img src="images/sample1.jpg" alt="graver-machine" style="width: 100%;">
-                      </div>
-                  <div class="col-md-6 text-center">
-                        <p><strong>{{langCtrlData.caption2[checkLang()]}}</strong></p>
-                        <img src="images/sample2.JPG" alt="manual" style="width: 100%;">
-                </div>      
+            <p>{{langCtrlData.text2[checkLang()]}}</p>
+            <p>{{langCtrlData.text3[checkLang()]}}</p>
+            <p>{{langCtrlData.text4[checkLang()]}}</p>
+            <p>{{langCtrlData.text5[checkLang()]}}</p>
+            <p>{{langCtrlData.text6[checkLang()]}} </p>
+            <p>{{langCtrlData.text7[checkLang()]}}</p>
+            <div class="row" style="padding-top:10px; padding-bottom: 35px; width: 100%;">
+                <div class="col-md-6 text-center">
+                    <p><strong>{{langCtrlData.caption1[checkLang()]}}</strong></p>
+                    <img alt="graver-machine" src="images/sample1.jpg" style="width: 100%;">
+                </div>
+                <div class="col-md-6 text-center">
+                    <p><strong>{{langCtrlData.caption2[checkLang()]}}</strong></p>
+                    <img alt="manual" src="images/sample2.JPG" style="width: 100%;">
+                </div>
             </div>
 
-          
-</div>  
-              
-</div>  
+
+        </div>
+
+    </div>
 </div>   
