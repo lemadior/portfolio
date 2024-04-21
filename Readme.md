@@ -9,7 +9,7 @@ functioned as a business website for four years.
 
 Just copy all the source stuff to the catalog on the webserver. No other settings is needed.
 
-**P.S.**
+#### **P.S.**
 
 This project was written mainly with only purpose to test the knowledge I'm gained during my
 learning of Angular JS.
