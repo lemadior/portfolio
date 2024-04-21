@@ -7,7 +7,7 @@ functioned as a business website for four years.
 
 ## Installtion
 
-Just copy of the source stuff to the catalog on the webserver. No other settings is needed.
+Just copy all the source stuff to the catalog on the webserver. No other settings is needed.
 
 **P.S.**
 
