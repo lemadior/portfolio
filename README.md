@@ -95,9 +95,9 @@ or
 
 ```docker exec -it app php artisan serve```
 
-To check the result go to URL: [localhost:5000](localhost:5000)
+To check the result go to URL: [localhost:5000](http://localhost:5000)
 
-5. To use the pgAdmin go to URL: [localhost:5050](localhost:5050)
+5. To use the pgAdmin go to URL: [localhost:5050](http://localhost:5000)
 
 ```
   user: <DB_USERNAME>@local.net
