@@ -54,8 +54,6 @@ After cloning type the next commands:
 
   ```cd < Laravel folder >```
 
-  ```git checkout task9-sql```
-
 2. Configure the Laravel:
 
   run command:
