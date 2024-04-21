@@ -1,5 +1,4 @@
 # About me
-___
 
 An accomplished full-stack web developer with 1.5 years of hands-on experience in the e-commerce 
 realm. Specializing in backend development, particularly proficient in **PHP** and **Laravel** framework, 
