@@ -70,10 +70,9 @@ To check works just type in browser *localhost:5000*.
 
 **IMPORTANT:** Copy the ```.env.example``` file to the ```.env``` and specify all the needed settings data.
 
-3. Start with Laravel
+3. Set proper DB user and password in ```.env``` file:
 
-- URL: localhost:5000
-- DB: works on 5432 port
+- URL: localhost:5000 
 - DB settings for .env:
     * DB_CONNECTION=pgsql
     * DB_HOST=db
@@ -82,10 +81,9 @@ To check works just type in browser *localhost:5000*.
     * DB_USERNAME=<username>
     * DB_PASSWORD=<password>
 
-4. To check the result go to URL: [localhost:5000](localhost:5000)
+***NOTE:*** DB works on 5432 port:
 
-
-5. Set proper DB user and password in ```.env``` file and do command:
+Add DB data:
 
 ```docker exec -it app php artisan migrate --seed```
 
@@ -93,15 +91,21 @@ or
 
 ```docker exec -it app php artisan migrate:fresh --seed```
 
-6. To use the pgAdmin go to URL: [localhost:5050](localhost:5050)
+4. Start with Laravel.
 
-```json
+```docker exec -it app php artisan serve```
+
+To check the result go to URL: [localhost:5000](localhost:5000)
+
+5. To use the pgAdmin go to URL: [localhost:5050](localhost:5050)
+
+```
   user: <DB_USERNAME>@local.net
   password: <DB_PASSWORD>
 ```
 
-7. To do complex tests do command:
+6. To do complex tests do command in terminal (*at first one must cd to the project's dir*):
 
 ```docker exec -it app php artisan test```
 
-8. To go to API page just use the URL: [http://localhost:5000/api/v1/documentation](http://localhost:5000/api/v1/documentation)
+7. To go to API page just use the URL: [http://localhost:5000/api/v1/documentation](http://localhost:5000/api/v1/documentation)
