@@ -10,9 +10,9 @@ window.onload = function() {
     copyright.innerHTML = "Copyright &copy; " + (new Date()).getFullYear() + " ";
 
     const projectLinks = {
-        project1: "https://lemadior.pp.ua",
-        project2: "https://lemadior.pp.ua/nikos/start.html",
-        project3: "https://olliplus.com.ua"
+        project1: "https://github.com/lemadior/portfolio/tree/simpleshop",
+        project2: "https://github.com/lemadior/portfolio/tree/funeral",
+        project3: "https://github.com/lemadior/portfolio/tree/laravel"
     }
 
     const slider = {
