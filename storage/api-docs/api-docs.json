@@ -1,0 +1,1602 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Faux Api",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:5000/api/v1"
+        }
+    ],
+    "paths": {
+        "/api/v1/": {},
+        "/courses": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Get Courses List",
+                "description": "Get data for all courses",
+                "operationId": "courses",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Data array",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "description": "Student ID",
+                                                        "type": "integer",
+                                                        "example": "1"
+                                                    },
+                                                    "name": {
+                                                        "description": "Course name",
+                                                        "type": "string",
+                                                        "example": "Math"
+                                                    },
+                                                    "description": {
+                                                        "description": "Course short description",
+                                                        "type": "string",
+                                                        "example": "Something about numbers"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Wrong request!"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Token not provided"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    },
+                    "422": {
+                        "description": "Unprocessable Content",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "properties": {
+                                                "action": {
+                                                    "description": "name of the action where error is occurred",
+                                                    "type": "string",
+                                                    "example": "get_courses_list"
+                                                },
+                                                "message": {
+                                                    "description": "Error message if incoming parameters is wrong",
+                                                    "type": "string",
+                                                    "example": "Fail due to some errors"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/students": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Get Students List",
+                "description": "Get data for all students",
+                "operationId": "studentsList",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Elements per page",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "examples": {
+                            "5": {
+                                "summary": "Five elements per page",
+                                "value": "5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page number",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "examples": {
+                            "": {
+                                "summary": "Page number",
+                                "value": ""
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Data array",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "description": "Student ID",
+                                                        "type": "integer",
+                                                        "example": "1"
+                                                    },
+                                                    "name": {
+                                                        "description": "Student's name",
+                                                        "type": "string",
+                                                        "example": "Domenica Kris"
+                                                    },
+                                                    "group": {
+                                                        "description": "Student's group",
+                                                        "type": "string",
+                                                        "example": "AA-00"
+                                                    },
+                                                    "courses": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "properties": {
+                                                                "": {
+                                                                    "description": "Course name",
+                                                                    "type": "string",
+                                                                    "example": "Math"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        }
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Wrong request!"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Token not provided"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    },
+                    "422": {
+                        "description": "Unprocessable Content",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "properties": {
+                                                "action": {
+                                                    "description": "name of the action where error is occurred",
+                                                    "type": "string",
+                                                    "example": "get_students_list"
+                                                },
+                                                "message": {
+                                                    "description": "Error message if incoming parameters is wrong",
+                                                    "type": "string",
+                                                    "example": "Fail due to some errors"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Student Create",
+                "description": "Create the new student",
+                "operationId": "studentCreate",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "group_id": {
+                                                "type": "integer",
+                                                "example": 2
+                                            },
+                                            "first_name": {
+                                                "type": "string",
+                                                "example": "Domenica"
+                                            },
+                                            "last_name": {
+                                                "type": "string",
+                                                "example": "Denesik"
+                                            },
+                                            "course_ids": {
+                                                "type": "array",
+                                                "items": {
+                                                    "description": "Course ID",
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Data array",
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "student_id": {
+                                                    "description": "ID of the newly created student record",
+                                                    "type": "integer",
+                                                    "example": 42
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Wrong request!"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    },
+                    "422": {
+                        "description": "Unprocessable Content",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "properties": {
+                                                "action": {
+                                                    "description": "name of the action where error is occurred",
+                                                    "type": "string",
+                                                    "example": "create_student"
+                                                },
+                                                "message": {
+                                                    "description": "Error message if incoming parameters is wrong",
+                                                    "type": "string",
+                                                    "example": "Fail due to some errors"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/students/{student}": {
+            "get": {
+                "tags": [
+                    "Common data"
+                ],
+                "summary": "Student",
+                "description": "Get student's data",
+                "operationId": "studentItself",
+                "parameters": [
+                    {
+                        "name": "student",
+                        "in": "path",
+                        "description": "Student ID",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "examples": {
+                            "1": {
+                                "summary": "Data of the student with ID=1",
+                                "value": "1"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Data array",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "name": {
+                                                        "description": "Student's name",
+                                                        "type": "string",
+                                                        "example": "Domenica Kris"
+                                                    },
+                                                    "group": {
+                                                        "description": "Student's group",
+                                                        "type": "string",
+                                                        "example": "AA-00"
+                                                    },
+                                                    "courses": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "properties": {
+                                                                "": {
+                                                                    "description": "Course name",
+                                                                    "type": "string",
+                                                                    "example": "Math"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        }
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "object",
+                                            "example": "Wrong request!"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    },
+                    "422": {
+                        "description": "Unprocessable Content",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "properties": {
+                                                "action": {
+                                                    "description": "name of the action where error is occurred",
+                                                    "type": "string",
+                                                    "example": "get_student"
+                                                },
+                                                "message": {
+                                                    "description": "Error message if incoming parameters is wrong",
+                                                    "type": "string",
+                                                    "example": "Fail due to some errors"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Student delete",
+                "description": "Delete student data",
+                "operationId": "studentDelete",
+                "parameters": [
+                    {
+                        "name": "student",
+                        "in": "path",
+                        "description": "Student ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "examples": {
+                            "5": {
+                                "summary": "Student ID",
+                                "value": "5"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Data array",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "message": {
+                                                        "description": "Result of the edit of the student data",
+                                                        "type": "string",
+                                                        "example": "Success"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Wrong request!"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "properties": {
+                                                "action": {
+                                                    "description": "name of the action where error is occurred",
+                                                    "type": "string",
+                                                    "example": "delete_student'"
+                                                },
+                                                "message": {
+                                                    "description": "Error message if incoming parameters is wrong",
+                                                    "type": "string",
+                                                    "example": "Fail due to some errors"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Content",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "properties": {
+                                                "action": {
+                                                    "description": "name of the action where error is occurred",
+                                                    "type": "string",
+                                                    "example": "delete_student'"
+                                                },
+                                                "message": {
+                                                    "description": "Error message if incoming parameters is wrong",
+                                                    "type": "string",
+                                                    "example": "Fail due to some errors"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "patch": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Student edit",
+                "description": "Edit student data",
+                "operationId": "studentEdit",
+                "parameters": [
+                    {
+                        "name": "student",
+                        "in": "path",
+                        "description": "Student ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "examples": {
+                            "5": {
+                                "summary": "Student ID",
+                                "value": "5"
+                            }
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "group_id": {
+                                                "type": "integer",
+                                                "example": 2
+                                            },
+                                            "first_name": {
+                                                "type": "string",
+                                                "example": "Domenica"
+                                            },
+                                            "last_name": {
+                                                "type": "string",
+                                                "example": "Denesik"
+                                            },
+                                            "course_ids": {
+                                                "type": "array",
+                                                "items": {
+                                                    "description": "Course ID",
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Data array",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "message": {
+                                                        "description": "Result of the edit of the student data",
+                                                        "type": "string",
+                                                        "example": "Success"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Wrong request!"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "properties": {
+                                                "action": {
+                                                    "description": "name of the action where error is occurred",
+                                                    "type": "string",
+                                                    "example": "edit_student'"
+                                                },
+                                                "message": {
+                                                    "description": "Error message if incoming parameters is wrong",
+                                                    "type": "string",
+                                                    "example": "Fail due to some errors"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Content",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "properties": {
+                                                "action": {
+                                                    "description": "name of the action where error is occurred",
+                                                    "type": "string",
+                                                    "example": "edit_student'"
+                                                },
+                                                "message": {
+                                                    "description": "Error message if incoming parameters is wrong",
+                                                    "type": "string",
+                                                    "example": "Fail due to some errors"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/groups": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Get Groups List",
+                "description": "Get data for all groups",
+                "operationId": "groups",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Data array",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "description": "Student ID",
+                                                        "type": "integer",
+                                                        "example": "1"
+                                                    },
+                                                    "name": {
+                                                        "description": "Group name",
+                                                        "type": "string",
+                                                        "example": "AA-00"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Wrong request!"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Token not provided"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    },
+                    "422": {
+                        "description": "Unprocessable Content",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "properties": {
+                                                "action": {
+                                                    "description": "name of the action where error is occurred",
+                                                    "type": "string",
+                                                    "example": "get_groups_list"
+                                                },
+                                                "message": {
+                                                    "description": "Error message if incoming parameters is wrong",
+                                                    "type": "string",
+                                                    "example": "Fail due to some errors"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/courses/{course}": {
+            "get": {
+                "tags": [
+                    "Common data"
+                ],
+                "summary": "Course students",
+                "description": "Get students belongs to the course",
+                "operationId": "studentsInCourse",
+                "parameters": [
+                    {
+                        "name": "course",
+                        "in": "path",
+                        "description": "Course ID",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "examples": {
+                            "1": {
+                                "summary": "Data of course with ID=1",
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Elements per page",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "examples": {
+                            "5": {
+                                "summary": "Five elements per page",
+                                "value": "5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page number",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "examples": {
+                            "": {
+                                "summary": "Page number",
+                                "value": ""
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Data array",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "name": {
+                                                        "description": "Course name",
+                                                        "type": "string",
+                                                        "example": "Astrology"
+                                                    },
+                                                    "students": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "properties": {
+                                                                "id": {
+                                                                    "description": "Student ID",
+                                                                    "type": "integer",
+                                                                    "example": "1"
+                                                                },
+                                                                "name": {
+                                                                    "description": "Student name",
+                                                                    "type": "string",
+                                                                    "example": "Domenica Kris"
+                                                                },
+                                                                "group": {
+                                                                    "description": "Group name",
+                                                                    "type": "string",
+                                                                    "example": "AA-00"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        }
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Wrong request!"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    },
+                    "422": {
+                        "description": "Unprocessable Content",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "properties": {
+                                                "action": {
+                                                    "description": "name of the action where error is occurred",
+                                                    "type": "string",
+                                                    "example": "get_course"
+                                                },
+                                                "message": {
+                                                    "description": "Error message if incoming parameters is wrong",
+                                                    "type": "string",
+                                                    "example": "Fail due to some errors"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/groups/{group}": {
+            "get": {
+                "tags": [
+                    "Common data"
+                ],
+                "summary": "Group students",
+                "description": "Get students belongs to the group",
+                "operationId": "studentsInGroup",
+                "parameters": [
+                    {
+                        "name": "group",
+                        "in": "path",
+                        "description": "Group ID",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "examples": {
+                            "1": {
+                                "summary": "Data of the group with ID=1",
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Elements per page",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "examples": {
+                            "5": {
+                                "summary": "Five elements per page",
+                                "value": "5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page number",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "examples": {
+                            "": {
+                                "summary": "Page number",
+                                "value": ""
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Data array",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "name": {
+                                                        "description": "Group name",
+                                                        "type": "string",
+                                                        "example": "AA-00"
+                                                    },
+                                                    "students": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "properties": {
+                                                                "id": {
+                                                                    "description": "Student ID",
+                                                                    "type": "integer",
+                                                                    "example": "1"
+                                                                },
+                                                                "name": {
+                                                                    "description": "Student name",
+                                                                    "type": "string",
+                                                                    "example": "Domenica Kris"
+                                                                },
+                                                                "courses": {
+                                                                    "type": "array",
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "": {
+                                                                                "description": "Course name",
+                                                                                "type": "string",
+                                                                                "example": "Math"
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    }
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        }
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Wrong request!"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    },
+                    "422": {
+                        "description": "Unprocessable Content",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "properties": {
+                                                "action": {
+                                                    "description": "name of the action where error is occurred",
+                                                    "type": "string",
+                                                    "example": "get_group"
+                                                },
+                                                "message": {
+                                                    "description": "Error message if incoming parameters is wrong",
+                                                    "type": "string",
+                                                    "example": "Fail due to some errors"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/filter/groups?members=15": {
+            "get": {
+                "tags": [
+                    "FAUX"
+                ],
+                "summary": "Filter groups by students",
+                "description": "Get groups filtered by its members",
+                "operationId": "groupsByStudents",
+                "parameters": [
+                    {
+                        "name": "members",
+                        "in": "query",
+                        "description": "Group members",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "examples": {
+                            "15": {
+                                "summary": "Groups with specified members",
+                                "value": "15"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Data array",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "properties": {
+                                                                "id": {
+                                                                    "description": "Group ID",
+                                                                    "type": "integer",
+                                                                    "example": "2"
+                                                                },
+                                                                "name": {
+                                                                    "description": "Group name",
+                                                                    "type": "string",
+                                                                    "example": "AA-00"
+                                                                },
+                                                                "students": {
+                                                                    "description": "Students amount",
+                                                                    "type": "integer",
+                                                                    "example": "15"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        }
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Wrong request!"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    },
+                    "422": {
+                        "description": "Unprocessable Content",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "properties": {
+                                                "action": {
+                                                    "description": "name of the action where error is occurred",
+                                                    "type": "string",
+                                                    "example": "filter_groups"
+                                                },
+                                                "message": {
+                                                    "description": "Error message if incoming parameters is wrong",
+                                                    "type": "string",
+                                                    "example": "Fail due to some errors"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/filter/students?course_id=1": {
+            "get": {
+                "tags": [
+                    "FAUX"
+                ],
+                "summary": "Filter students by course",
+                "description": "Get groups filtered by students amount",
+                "operationId": "studentsByCourse",
+                "parameters": [
+                    {
+                        "name": "course_id",
+                        "in": "query",
+                        "description": "Course ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "examples": {
+                            "2": {
+                                "summary": "Course ID",
+                                "value": "2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Elements per page",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "examples": {
+                            "5": {
+                                "summary": "Five elements per page",
+                                "value": "5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page number",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "examples": {
+                            "": {
+                                "summary": "Page number",
+                                "value": ""
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Data array",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "students": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "properties": {
+                                                                "id": {
+                                                                    "description": "Student ID",
+                                                                    "type": "integer",
+                                                                    "example": "3"
+                                                                },
+                                                                "name": {
+                                                                    "description": "Student name ",
+                                                                    "type": "string",
+                                                                    "example": "Domenica Denesik"
+                                                                },
+                                                                "group": {
+                                                                    "description": "Group name",
+                                                                    "type": "string",
+                                                                    "example": "AA-00"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        }
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "properties": {
+                                                "action": {
+                                                    "description": "name of the action where error is occurred",
+                                                    "type": "string",
+                                                    "example": "filter_students"
+                                                },
+                                                "message": {
+                                                    "description": "Error message if incoming parameters is wrong",
+                                                    "type": "string",
+                                                    "example": "Fail due to some errors"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Content",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "properties": {
+                                                "action": {
+                                                    "description": "name of the action where error is occurred",
+                                                    "type": "string",
+                                                    "example": "filter_students"
+                                                },
+                                                "message": {
+                                                    "description": "Error message if incoming parameters is wrong",
+                                                    "type": "string",
+                                                    "example": "Fail due to some errors"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/login": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Get token to works with API for admin tasks",
+                "description": "Get token for existent user",
+                "operationId": "authUser",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "email": {
+                                                "type": "string",
+                                                "example": "user@example.com"
+                                            },
+                                            "password": {
+                                                "type": "string",
+                                                "example": "12345"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Current token",
+                                    "properties": {
+                                        "token": {
+                                            "description": "Admin Authentication Token",
+                                            "type": "string",
+                                            "example": "<token>"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Wrong request!"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer"
+            }
+        }
+    }
+}
