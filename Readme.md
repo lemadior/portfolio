@@ -5,7 +5,7 @@ Then (*almost unchanged*) it was implemented as a commercial project
 for the local funeral services bureau, where it has been successfully
 functioned as a business website for four years.
 
-## Installtion
+## Installation
 
 Just copy all the source stuff to the catalog on the webserver. No other settings is needed.
 
