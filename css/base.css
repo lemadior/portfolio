@@ -1,13 +1,11 @@
-B* {
+* {
     margin:0 0;
     padding:0;
-    /* height: 100%; */
 }
 
 body {
     margin:0 50px; 
     background-color: white;
-    /* height: 100%; */
 }
 
 .hide {
@@ -18,10 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    /* margin: 0 5px; */
     max-width: 1300px;
-    /* background-color:rgb(140, 177, 255); */
-    /* margin: 0 auto; */
 }
 
 header {
@@ -33,15 +28,15 @@ header {
     position: fixed;
     z-index: 1000;
     width: 100%;
-    top:0;
+    inset-block-start:0;
 }
 
 .header__title {
     float: left;
-    margin-left: 5px;
+    margin-inline-start: 5px;
     position: relative;
-    top: 50%;
-    margin-top: -10px;
+    inset-block-start: 50%;
+    margin-block-start: -10px;
 }
 
 .burger-menu {
@@ -58,9 +53,8 @@ header {
     visibility: hidden;
     align-items: center;
     position: absolute;
-    top: 5px;
-    right:10px;
-    /* float:right; */
+    inset-block-start: 5px;
+    inset-inline-end:10px;
     width: 25px;
     height: 25px;
     cursor: pointer;
@@ -71,7 +65,6 @@ header {
 .menu-btn > span::before,
 .menu-btn > span::after {
   display: block;
-  
   position: absolute;
   width: 100%;
   height: 2px;
@@ -81,12 +74,12 @@ header {
 
 .menu-btn > span::before {
   content: '';
-  top: -8px;
+  inset-block-start: -8px;
 }
 
 .menu-btn > span::after {
   content: '';
-  top: 8px;
+  inset-block-start: 8px;
 }
 
 .menubox{
@@ -96,8 +89,6 @@ header {
     list-style: none;
     display: flex;
     justify-content: space-around;
-    /* box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
-    transition-duration: .15s; */
   }
 
 .menubox button {
@@ -106,7 +97,7 @@ header {
 }
 
 .menubox button:hover {
-    box-shadow: 1px 0px 3px rgba(0, 0, 0, .2);
+    box-shadow: 1px 0 3px rgba(0, 0, 0, .2);
 }
 
 #menu-toggle{
@@ -128,22 +119,20 @@ header {
 
 .form__add form {
     width: 270px;
-    /* background-color: aqua; */
     margin: 0 auto;
     position: relative;
-    top: 165px;
+    inset-block-start: 165px;
 }
 
 form > p {
     font-style: italic;
-    font-family: Raleway-Light;
+    font-family: Raleway-Light, serif;
     font-size: 12px;
     width: 100%;
-    border-top:1px dotted gray;
-    margin-top:10px;
-    padding-top: 3px;
+    border-block-start:1px dotted gray;
+    margin-block-start:10px;
+    padding-block-start: 3px;
 }
-
 
 form > div,
 .dvd__block,
@@ -153,7 +142,7 @@ form > div,
     width: 95%;
     height: 26px;
     line-height: 30px;
-    margin-left: 10px;
+    margin-inline-start: 10px;
 }
 
 
@@ -161,7 +150,7 @@ form > div > span,
 .dvd__block > div > span,
 .book__block > div > span,
 .furniture__block > div > span {
-    font-family: Raleway-Regular;
+    font-family: Raleway-Regular, serif;
     font-size: 14px;
     font-weight: 600;
     line-height: 20px;
@@ -173,7 +162,7 @@ form > div span ~ span,
 .furniture__block > div span ~ span {
     float: right;
     font-size:24px;
-    padding-right: 5px;
+    padding-inline-end: 5px;
 }
 
 form > div span ~ span > input,
@@ -185,9 +174,9 @@ form > div span ~ span > input,
     height: 22px;
     width: 140px;
     font-weight: bold;
-    color: green;/* rgb(6, 166, 69);*/
+    color: green;
     padding: 0 5px;
-    margin-right: 3px;
+    margin-inline-end: 3px;
 }
 
 form > div span ~ span > select {
@@ -197,62 +186,21 @@ form > div span ~ span > select {
     width: 125px;
     font-weight: 600;
     color: darkred;
-    margin-right: 13px;
+    margin-inline-end: 13px;
 }
 
 .dvd__block,
 .book__block,
 .furniture__block {
-    margin-top: 10px;
+    margin-block-start: 10px;
     height: auto;
 }
-
-/* .dvd__block {
-    padding: 5px;
-    width: 95%;
-    height: 26px;
-    line-height: 30px;
-    margin-left: 10px;
-} */
-
-
-/* .dvd__block > div > span {
-    font-family: Raleway-Regular;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 20px;
-} */
-
-/* .dvd__block > div span ~ span {
-    float: right;
-    font-size:24px;
-    padding-right: 5px;
-} */
-
-/* .dvd__block > div span ~ span > input {
-    border: 1px solid gray;
-    border-radius: 5px;
-    height: 22px;
-    width: 155px;
-    font-weight: bold;
-    color: rgb(83, 83, 83);
-    padding: 0 5px;
-    margin-right: 3px;
-} */
-
-/* .form__add form input,select {
-    height:max-content;
-    margin-bottom:10px;
-    margin-top: 10px;    
-} */
-
 
 .products__container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    /* align-self: stretch; */
-    margin-top: 85px;
+    margin-block-start: 85px;
     margin-bottom: 85px;
     height: auto;
 }
@@ -261,8 +209,8 @@ form > div span ~ span > select {
     width: max-content;
     height: max-content;
     position: relative;
-    top: 10px;
-    left: -15px;
+    inset-block-start: 10px;
+    inset-inline-start: -15px;
     float: left;
 }
 
@@ -277,18 +225,16 @@ form > div span ~ span > select {
     margin: 2% 5px;
 }
 
-
-
 .product__body {
     width: 80%;
     height: 70%;
     align-self: center;
-    margin-left: -14px;
+    margin-inline-start: -14px;
 }
 
 .product__body > div {
     height: auto;
-    top: 50%;
+    inset-block-start: 50%;
     transform: translateY(-50%);
     position: relative;
 }
@@ -296,11 +242,10 @@ form > div span ~ span > select {
 .product__body p {
     height: max-content;
     line-height: 26px;
-
 }
 
 .product__body p:nth-child(1) {
-    font-family: "RobotoRegular";
+    font-family: "RobotoRegular", serif;
     font-weight: 500;
     font-size: 14px;
     color: red;
@@ -322,14 +267,14 @@ footer {
     max-height: 60px;
     text-align: center;
     background-color: white;
-    border-top: 1px solid black;
-    font-family: "Raleway-Thin";
+    border-block-start: 1px solid black;
+    font-family: "Raleway-Thin", serif;
     font-size: 16px;
     line-height: 60px;
     font-weight: 600;
     color: gray;
     position: fixed;
-    bottom: 0;
+    inset-block-end: 0;
     max-width: calc(100% - 100px);;
 }
 
@@ -343,36 +288,31 @@ footer {
     font-weight: 600;
     padding: 10px;
     margin: 0 auto;
-    /* margin-left: 10%; */
-    top: 85px !important;
+    inset-block-start: 85px !important;
     text-align: center;
     z-index: 2000;
-    /* margin-left: 5%; */
-    /* display: none; */
 }
 
 .e404 {
     position: fixed;
     min-height: 400px;
     width: 80%;
-    margin-left: 5%;
-    top: 50%;
+    margin-inline-start: 5%;
+    inset-block-start: 50%;
     transform: translateY(-50%);
-    /* background-color: blue; */
-    margin-bottom: 20px;
+    margin-block-end: 20px;
 }
 
 .e404 .e_sign {
-    margin: 0 auto;
     position: relative;
     width: max-content;
     font-size: 160px;
     color: darkred;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
 }
 
 .e_msg {
-    font-family: RobotoRegular;
+    font-family: RobotoRegular, serif;
     font-size: 20px;
     text-align: center;
 }
@@ -380,7 +320,6 @@ footer {
 @media screen and (max-width: 1023px) {
     body {
         margin:0 30px; 
-        /* height: 100%; */
     }
 
     header {
@@ -394,15 +333,11 @@ footer {
     .error {
         width: calc(100% - 80px);
     }
-    /* .e404 {
-        margin-left: 6%;
-    } */
 }
 
 @media screen and (max-width: 640px) {
     body {
         margin:0 15px; 
-        /* height: 100%; */
     }
 
     header {
@@ -421,13 +356,11 @@ footer {
 
     body {
         margin: 0 6px; 
-        /* height: 100%; */
     }
 
     header {
         max-width: calc(100% - 12px);
         width: 100%;
-
     }
 
     footer {
@@ -438,9 +371,8 @@ footer {
     .menubox{
         display: block;
         position: fixed;
-        /* visibility: hidden; */
-        top: -85px;
-        right: 4%;
+        inset-block-start: -85px;
+        inset-inline-end: 4%;
         width: 92%;
         height: 30px;
         margin: 0;
@@ -448,7 +380,7 @@ footer {
         text-align: center;
         list-style: none;
         background-color: #d2d2d2e0;
-        box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+        box-shadow: 1px 0 6px rgba(0, 0, 0, .2);
         transition-duration: .15s;
       }
 
@@ -459,12 +391,10 @@ footer {
     .menubox button {
         padding: 10px 30px;
         cursor: pointer;
-        margin-right: 20px;
-        margin-left: 20px;
+        margin-inline: 20px;
     }
 
     #menu-toggle{
-        /* opacity: 0; */
         display: none;
     }
     
@@ -477,18 +407,18 @@ footer {
     }
     
      #menu-toggle:checked ~ .menu-btn > span::before{
-        top: 0;
+        inset-block-start: 0;
         transform: rotate(0deg);
     }
 
     #menu-toggle:checked ~ .menu-btn > span::after{
-        top: 0;
+        inset-block-start: 0;
         transform: rotate(90deg);
     }
     
     #menu-toggle:checked ~ .menubox{
         visibility: visible;
-        top: 85px;
+        inset-block-start: 85px;
         height: inherit;
     }
 
