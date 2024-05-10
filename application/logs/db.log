@@ -49,3 +49,21 @@ file 'C:\OpenServer\domains\scandiweb.local.net\application\core\database.php Li
 ERROR: 28-05-2022 20:02:04 DB: cannot get query: [call from getQuery] TWO You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''products'' at line 1
 file 'C:\OpenServer\domains\scandiweb.local.net\application\core\database.php Line 96
 
+ERROR: 10-05-2024 18:09:10 DB: cannot get query: [call from getQuery] Access denied for user 'user'@'localhost' (using password: YES)
+file '/var/www/simpleshop.local.net/application/core/database.php Line 91
+
+ERROR: 10-05-2024 18:09:15 DB: cannot get query: [call from getQuery] Access denied for user 'user'@'localhost' (using password: YES)
+file '/var/www/simpleshop.local.net/application/core/database.php Line 91
+
+ERROR: 10-05-2024 18:09:18 DB: cannot get query: [call from getQuery] Access denied for user 'user'@'localhost' (using password: YES)
+file '/var/www/simpleshop.local.net/application/core/database.php Line 91
+
+ERROR: 10-05-2024 18:09:20 DB: cannot get query: [call from getQuery] Access denied for user 'user'@'localhost' (using password: YES)
+file '/var/www/simpleshop.local.net/application/core/database.php Line 91
+
+ERROR: 10-05-2024 18:12:07 DB: cannot get query: [call from getQuery] Access denied for user 'gregor'@'localhost' (using password: YES)
+file '/var/www/simpleshop.local.net/application/core/database.php Line 91
+
+ERROR: 10-05-2024 18:12:08 DB: cannot get query: [call from getQuery] Access denied for user 'gregor'@'localhost' (using password: YES)
+file '/var/www/simpleshop.local.net/application/core/database.php Line 91
+

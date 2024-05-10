@@ -3,6 +3,6 @@
 define('ROOT', $_SERVER['DOCUMENT_ROOT']);
 
 const HOST = 'localhost';
-const USER = 'user';
-const PASS = '12345';
+const USER = 'gregor';
+const PASS = 'M0rdanell0+';
 const DB_NAME = 'goods';

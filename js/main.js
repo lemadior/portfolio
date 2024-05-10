@@ -1,39 +1,35 @@
 console.log('Main script is loading...');
 
 function delete_product() {
-    console.log('Deleting');
-    let checkboxes = document.getElementsByClassName('delete-checkbox');
+    console.log('Delete');
+    const checkboxes = document.getElementsByClassName('delete-checkbox');
    
-    if (checkboxes.length == 0) return;
+    if (checkboxes.length === 0) {
+        return;
+    }
 
     let node;
-    let xhr = new XMLHttpRequest();
-    let mForm =  new FormData();
-
-    let checkbox;
-    let arr = [];
+    const xhr = new XMLHttpRequest();
+    const mForm =  new FormData();
 
     xhr.open('POST','/');
 
-    for (let i = 0; i < checkboxes.length; i++) {
-        checkbox=checkboxes[i];
-
+    Array.prototype.slice.call(checkboxes).forEach((checkbox, index) => {
         if (checkbox.checked) {
-           mForm.append(i, checkbox.id);
+            mForm.append(index, checkbox.id);
         }
-    }
+    });
 
    xhr.send(mForm);
 
    xhr.onload = () => {
+        console.log('Return=', xhr.response);
 
-        console.log('Return=',xhr.response);
-        if (xhr.response == "SUCCESS") {
+        if (xhr.response === 'SUCCESS') {
             mForm.forEach((chk) => {
                 node = document.getElementById(chk).parentNode.parentNode;
                 node.parentNode.removeChild(node); 
             });
-        };
-    
-    }   
+        }
+    }
 }
