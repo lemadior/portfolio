@@ -6,14 +6,17 @@ use application\core\types\Type_Header;
 
 class Page
 {
-	protected $layout;
+    public string $hideButtons;
+    public string $title;
+    public string $headerTitle;
+    protected $layout;
 	protected $pageTitle;
-	protected $view;
-	protected $data;
-	protected $header; // Myst be class of the <Type_Header>
+	public string $view;
+	public $data;
+	protected Type_Header $header; // Must be class of the <Type_Header>
 
-	protected $style;	//filename with current page style
-	protected $script;	//filename with current page JavaScript
+	protected string $style;	//filename with current page style
+	protected string $script;	//filename with current page JavaScript
 
 	public function __construct($view = 'main_view', $title = 'DEFAULT TITLE', $layout = 'main', $data = null)
 	{
@@ -32,8 +35,8 @@ class Page
 		return $this->layout;
 	}
 
-	public function setLayout($layout)
-	{
+	public function setLayout($layout): void
+    {
 		$this->layout = $layout;
 	}
 

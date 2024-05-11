@@ -3,7 +3,7 @@
 use application\exceptions\Exception_Route;
 use application\core\Route;
 
-spl_autoload_register(function($class) {
+spl_autoload_register(static function($class) {
 
     $ds = DIRECTORY_SEPARATOR;
 
@@ -20,12 +20,11 @@ spl_autoload_register(function($class) {
     } else if (strpos($class, 'Type_') !== false)  {
         $subfolder = 'core/types';
     }
- 
 
     $filename = ROOT . $ds . 'application' . $ds . $subfolder . $ds . str_replace('\\', $ds, $last_elem) . '.php';
-    
-    $filename = strtolower($filename);
-    
+
+    //$filename = strtolower($filename);
+
     if (file_exists($filename)) {
         require_once($filename);
     } else {

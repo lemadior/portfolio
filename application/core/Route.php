@@ -6,9 +6,11 @@ use application\exceptions\Exception_Route;
 
 class Route
 {
-    static function start()
+    /**
+     * @throws Exception_Route
+     */
+    public static function start(): void
     {
-       
         // Default controller and it's method
         $controller_name = 'Main';
         $action_name = 'index';
@@ -19,10 +21,10 @@ class Route
         if (!empty($routes[1])) {
             $controller_name = $routes[1];
         }
-        
+
         if ($controller_name === 'add-product') {
             $controller_name = 'add';
-        } 
+        }
 
         //Get name of action
         if (!empty($routes[2])) {
@@ -43,7 +45,8 @@ class Route
         }
 
         //Get file with controller's class
-        $controller_file = strtolower($controller_name) . '.php';
+//        $controller_file = strtolower($controller_name) . '.php';
+        $controller_file = $controller_name . '.php';
         $controller_path = 'application/controllers/' . $controller_file;
 
         if (file_exists($controller_path)) {
