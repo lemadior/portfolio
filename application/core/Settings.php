@@ -2,10 +2,10 @@
 
 namespace application\core;
 
-class Settings 
+class Settings
 {
     static private $_instance;
-    
+
     private $templates;
     private $types;
 
@@ -17,7 +17,7 @@ class Settings
     {
         $this->templates = include ROOT . "/application/settings/templates.php";
         $this->msg_routes = include ROOT . "/application/messages/routes.php";
-        $this->msg_common = include ROOT . "/application/messages/common.php";  
+        $this->msg_common = include ROOT . "/application/messages/common.php";
         $this->msg_database = include ROOT . "/application/messages/database.php";
         $this->types = include ROOT . "/application/settings/product_types.php";
     }
@@ -26,12 +26,12 @@ class Settings
     {
     }
 
-    static public function get($property)
+    public static function get($property)
     {
         return self::instance()->$property;
     }
 
-    static public function instance() 
+    public static function instance(): Settings
     {
         if (self::$_instance instanceof self) {
             return self::$_instance;
@@ -42,26 +42,26 @@ class Settings
         return self::$_instance;
     }
 
-    static public function getRouteMessages()
-    {    
+    public static function getRouteMessages()
+    {
         return self::get('msg_routes');
     }
 
-    static public function getCommonMessages()
-    {    
+    public static function getCommonMessages()
+    {
         return self::get('msg_common');    }
 
-    static public function getDatabaseMessages()
-    {    
+    public static function getDatabaseMessages()
+    {
         return self::get('msg_database');
     }
 
-    static public function getAllowedTypes()
+    public static function getAllowedTypes()
     {
         return self::get('types');
     }
 
-    static public function getTemplate($template)
+    public static function getTemplate($template): string
     {
         $tpl = self::get('templates');
 
@@ -71,5 +71,4 @@ class Settings
 
         return '';
     }
-
 }

@@ -87,3 +87,18 @@ file '/var/www/simpleshop.local.net/application/core/Route.php Line 51
 ERROR: 11-05-2024 7:55:34 Controller Error : application/controllers/controller_main.php
 file '/var/www/simpleshop.local.net/application/core/Route.php Line 51
 
+ERROR: 11-05-2024 8:41:56 Controller Error : application/controllers/Controller_Favicon.ico.php
+file '/var/www/simpleshop.local.net/application/core/Route.php Line 56
+
+ERROR: 12-05-2024 19:26:05 Controller Error : application/controllers/Controller_Favicon.ico.php
+file '/var/www/simpleshop.local.net/application/core/Route.php Line 56
+
+ERROR: 12-05-2024 19:47:05 Controller Error : application/controllers/Controller_Favicon.ico.php
+file '/var/www/simpleshop.local.net/application/core/Route.php Line 56
+
+ERROR: 12-05-2024 19:47:07 Controller Error : application/controllers/Controller_Favicon.ico.php
+file '/var/www/simpleshop.local.net/application/core/Route.php Line 56
+
+ERROR: 12-05-2024 19:54:40 Controller Error : application/controllers/Controller_Favicon.ico.php
+file '/var/www/simpleshop.local.net/application/core/Route.php Line 56
+

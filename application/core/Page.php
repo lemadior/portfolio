@@ -1,5 +1,5 @@
 <?php
-	
+
 namespace application\core;
 
 use application\core\types\Type_Header;
@@ -29,15 +29,17 @@ class Page
 		$this->script = '';
 		$this->style = '';
 	}
-	
+
 	public function getLayout()
 	{
 		return $this->layout;
 	}
 
-	public function setLayout($layout): void
+	public function setLayout($layout): Page
     {
 		$this->layout = $layout;
+
+        return $this;
 	}
 
 	public function getPageTitle()
@@ -45,9 +47,11 @@ class Page
 		return $this->pageTitle;
 	}
 
-	public function setPageTitle($title)
-	{
+	public function setPageTitle($title): Page
+    {
 		$this->pageTitle = $title;
+
+        return $this;
 	}
 
 	public function getView()
@@ -55,9 +59,11 @@ class Page
 		return $this->view;
 	}
 
-	public function setView($view)
+	public function setView($view): Page
 	{
 		$this->view = $view;
+
+        return $this;
 	}
 
 	public function getData()
@@ -65,43 +71,50 @@ class Page
 		return $this->data;
 	}
 
-	public function setData($data)
+	public function setData($data): Page
 	{
 		$this->data = $data;
+
+        return $this;
 	}
 
-	public function getHeader()
-	{
+	public function getHeader(): Type_Header
+    {
 		return $this->header;
 	}
 
-	public function setHeader($header)
+	public function setHeader($header): Page
 	{
 		$this->header = $header;
+
+        return $this;
 	}
 
-	public function setStyle($stylefile)
+	public function setStyle($stylefile): Page
 	{
 		if (file_exists(ROOT . "/css/" . $stylefile)) {
 			$this->style = "css/" . $stylefile;
 		}
+
+        return $this;
 	}
 
-	public function getStyle() 
-	{
+	public function getStyle(): string
+    {
 		return $this->style;
 	}
 
-	public function setScript($scriptfile)
+	public function setScript($scriptfile): Page
 	{
 		if (file_exists(ROOT . "/js/" . $scriptfile)) {
 			$this->script = "js/" . $scriptfile;
 		}
+
+        return $this;
 	}
 
-	public function getScript() 
-	{
+	public function getScript(): string
+    {
 		return $this->script;
 	}
-
 }

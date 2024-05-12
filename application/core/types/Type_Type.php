@@ -6,23 +6,23 @@ class Type_Type extends Type_Goods
 {
 	protected $description;
 	protected $attributes;
-	
-	public function __construct($id, $name, $descr, $attrs)
+
+	public function __construct($id, $name, $description, $attributes)
 	{
 		parent::__construct($id, $name);
-		
-		$this->description = $descr;
-		$this->attributes = $attrs;
+
+		$this->description = $description;
+		$this->attributes = $attributes;
 	}
-	
+
 	public function getDescription() {
 		return $this->description;
 	}
-	
+
 	public function setDescription($descr) {
 		$this->description = $descr;
 	}
-	
+
 	public function getAttributes() {
 		return $this->attributes;
 	}
@@ -30,5 +30,4 @@ class Type_Type extends Type_Goods
 	public function setAttributes($attrs) {
 		$this->attributes = $attrs;
 	}
-	
 }

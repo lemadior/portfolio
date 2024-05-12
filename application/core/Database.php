@@ -3,95 +3,111 @@
 namespace application\core;
 
 use application\exceptions\Exception_Database;
+use Exception;
+use mysqli;
+use RuntimeException;
 
 class Database
 {
-    static private $connection = NULL;
+    static private $connection = null;
 
-    private static function getConnection()
+    /**
+     * @throws Exception
+     */
+    private static function getConnection(): ?mysqli
     {
-        if (self::$connection === NULL) {
-            
-            @self::$connection = new \mysqli(HOST, USER, PASS, DB_NAME);
-           
+        if (self::$connection === null) {
+
+            @self::$connection = new mysqli(HOST, USER, PASS, DB_NAME);
+
             if (mysqli_connect_errno()) {
-                throw new \Exception(mysqli_connect_error(), 1);
-                return NULL;
+                throw new RuntimeException(mysqli_connect_error(), 1);
             }
 
             self::$connection->report_mode = MYSQLI_REPORT_STRICT | MYSQLI_REPORT_ERROR;
 
             try {
                 self::doQuery("SET NAMES 'UTF8'");
-            } catch (\Exception $err) {
-                throw new \Exception($err->getMessage(), 2);
+            } catch (Exception $err) {
+                throw new RuntimeException($err->getMessage(), 2);
             }
         }
 
         return self::$connection;
     }
 
-    public static function getDbLink()
+    /**
+     * @throws Exception
+     */
+    public static function getDbLink(): ?mysqli
     {
         return self::getConnection();
     }
 
+    /**
+     * @throws Exception_Database
+     */
     public static function closeConnection() : bool
     {
         try {
             $db_link = self::getConnection();
-        } catch (\Exception $err) {
-            throw new Exception_Database($db_link->error, 4);
-            return false;
-        } 
+        } catch (Exception $err) {
+            throw new Exception_Database('Cannot get database connection', 4);
+        }
 
-        if ($db_link === NULL) return true; // If connection already closed 
+        // If connection already closed
+        if ($db_link === null) {
+            return true;
+        }
 
         try {
             $db_link->close();
-        } catch (\Exception $err) {
+        } catch (Exception $err) {
             throw new Exception_Database($db_link->error, 4);
-            return false;
-        } 
+        }
 
         self::$connection = NULL;
 
         return true;
     }
 
+    /**
+     * @throws Exception
+     */
     public static function doQuery($query)
     {
         $db_link = self::getConnection();
- 
+
         if (!$db_link) {
-            throw new \Exception(mysqli_connect_error(), 1);
-            return NULL;
-        } 
-  
+            throw new RuntimeException(mysqli_connect_error(), 1);
+        }
+
         $result = $db_link->query($query);
 
         if ($db_link->error) {
-            throw new \Exception($db_link->error, 2);
-            return NULL;
+            throw new RuntimeException($db_link->error, 2);
         }
 
         return $result;
     }
 
     // Return associative array
-    public static function getQuery($query)
+
+    /**
+     * @throws Exception_Database
+     */
+    public static function getQuery($query): array
     {
         $arr = [];
 
         try {
 
             $result = self::doQuery($query);
-            
+
         } catch (\Exception $err) {
             throw new Exception_Database("[call from getQuery] " . $err->getMessage(), 2);
-            return null;
         }
-        
+
         while ($row = @$result->fetch_assoc()) {
             $arr[] = $row;
         }
@@ -104,7 +120,10 @@ class Database
     // $table - string
     // $where - array
     // $values - array multidimentional
-    public static function putValue($link, $table, $where, $data)
+    /**
+     * @throws Exception_Database
+     */
+    public static function putValue($link, $table, $where, $data): bool
     {
         $fields = '';
         $values = '';
@@ -135,13 +154,10 @@ class Database
 
         try {
             self::doQuery($query);
-        } catch (\Exception $err) {
+        } catch (Exception $err) {
             throw new Exception_Database("call from putValue: " . $err->getMessage(), 3);
-            return false;
         }
 
         return true;
     }
-
-
 }

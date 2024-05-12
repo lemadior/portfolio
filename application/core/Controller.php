@@ -42,13 +42,13 @@ abstract class Controller
         $this->views = $views;
     }
 
-    public function getViews()
+    public function getViews(): View
     {
         return $this->views;
     }
 
     // $header must be instance of the <Type_Header> type
-    public function setHeader($header)
+    public function setHeader($header): void
     {
         $this->page->setHeader($header);
     }

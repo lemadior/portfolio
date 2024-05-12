@@ -11,7 +11,10 @@ use application\exceptions\Exception_Database;
 
 class Model_Add extends Model
 {
-    public function getData()
+    /**
+     * @throws Exception_Model
+     */
+    public function getData(): void
     {
         try {
             Database::closeConnection();
@@ -20,7 +23,7 @@ class Model_Add extends Model
         }
     }
 
-    public function getProductTypes()
+    public function getProductTypes(): array
     {
         $data = [];
 
@@ -35,7 +38,7 @@ class Model_Add extends Model
         }
 
         $allowed_types = Settings::getAllowedTypes();
-   
+
         foreach ($result as $value) {
             if (in_array($value['name'], $allowed_types)) {
                 $data[] = $value['name'];
@@ -116,7 +119,7 @@ class Model_Add extends Model
         $query = "INSERT INTO attributes (prod_id, fields_id, value) VALUES ";
 
         foreach ($attrs as $_id => $attr) {
-            $query .= "({$id}, {$_id}, {$attr}),"; 
+            $query .= "({$id}, {$_id}, {$attr}),";
         }
 
         $query = rtrim($query, ',');

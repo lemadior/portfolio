@@ -93,7 +93,6 @@ class Controller_Add extends Controller
         $str_types = '';
         $str_prod_add = '';
 
-
         foreach ($types as $index => $type)
         {
             $prod_add = $this->product_add_block;

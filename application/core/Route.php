@@ -37,7 +37,8 @@ class Route
         $action_name = 'action_' . $action_name;
 
         //get file with model
-        $model_file = strtolower($model_name) . '.php';
+//        $model_file = strtolower($model_name) . '.php';
+        $model_file = $model_name . '.php';
         $model_path = 'application/models/' . $model_file;
 
         if (file_exists($model_path)) {

@@ -9,30 +9,29 @@ use application\core\Error;
 use application\core\Settings;
 
 use application\core\types\Type_Header;
+use Exception;
 
 class Controller_Main extends Controller
 {
-    private $product_card_template;
-    protected $header_buttons;
-    private $model;
+    private string $product_card_template;
+    protected array $header_buttons;
+    private Model_Main $model;
 
-    function __construct()
+    public function __construct()
     {
 	    parent::__construct();
         $this->model = new Model_Main();
         $this->product_card_template =  Settings::getTemplate('products');
         $this->header_buttons = [
-                                    ['id' => 'add', 'name' => 'ADD', 'action' => 'onclick="location.href=\'/add-product\'"'], 
+                                    ['id' => 'add', 'name' => 'ADD', 'action' => 'onclick="location.href=\'/add-product\'"'],
                                     ['id' => 'delete-product-btn', 'name' => 'DELETE', 'action' => 'onclick="delete_product()"']
-                                ]; 
+                                ];
     }
 
-    function action_index()
+    public function action_index()
     {
-
-        
         $products = ''; // Array of the product types with all needed data
-       
+
         // If $_POST is not emty it means than button 'DELETE' was pressed
         if (!empty($_POST)) {
 
@@ -42,20 +41,18 @@ class Controller_Main extends Controller
                     $answ = "FAIL";
                     break;
                 }
-        
-            }
-            echo $answ; 
-            return ;
 
+            }
+            echo $answ;
+            return;
         }
 
         try {
             $_products = $this->model->getData();
-        } catch (Exception_Model $err) {
-            Error::setError($err->getMessage());
-        } catch (\Exception $err) {
+        } catch (Exception_Model|Exception $err) {
             Error::setError($err->getMessage());
         }
+
         if (!empty($_products)) {
             foreach ($_products as $product) {
                 $products .= $this->getProductCard($product);
@@ -63,7 +60,7 @@ class Controller_Main extends Controller
         }
 
         $this->setData(['products' => $products]);
-       
+
         $this->setPageTitle('Product List');
         $this->setHeader(new Type_Header('Product List', 'show'));
         $this->getHeader()->setButtons($this->header_buttons);
@@ -74,11 +71,11 @@ class Controller_Main extends Controller
         $this->getViews()->render($this->getPage());
     }
 
-    
 
-    private function prepareUnits($str) 
-    {    
-        $units = ['(MB)' => ' MB', '(KG)' => 'KG', '(CM)' => '']; 
+
+    private function prepareUnits($str)
+    {
+        $units = ['(MB)' => ' MB', '(KG)' => 'KG', '(CM)' => ''];
 
         return $units[$str];
     }
@@ -86,7 +83,7 @@ class Controller_Main extends Controller
     private function getProductCard($product)
     {
         $card = $this->product_card_template;
-      
+
         $card = str_replace("%ID%", $product->getId(), $card);
         $card = str_replace("%SKU%", $product->getSku(), $card);
         $card = str_replace("%NAME%", $product->getName(), $card);

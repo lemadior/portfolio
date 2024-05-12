@@ -4,41 +4,28 @@ namespace application\core;
 
 class Error
 {
-    static protected $error;
+    static protected bool $error = false;
 
-    public function __construct()
-    {
-        self::$error = false;
-    }
-
-    // static public function throwError($err)
-    // {
-    //     self::setError($err);
-    //     return self::showError();
-    // }
-
-    static public function getError(): String
+    public static function getError(): String
     {
         $err = '';
         if (!empty($_SESSION['common_error'])) {
             $err = $_SESSION['common_error'];
             $_SESSION['common_error'] = '';
             self::$error = false;
-            // return implode(' ', self::$error);
         }
 
         return $err;
-
     }
 
-    static public function isError() {
+    public static function isError(): bool
+    {
         return self::$error;
     }
 
-    static public function setError($err)
+    public static function setError($err): void
     {
         self::$error = true;
         $_SESSION['common_error'] = $err;
     }
-
 }
