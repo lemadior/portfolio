@@ -14,7 +14,7 @@ class Exception_Route extends \Exception
     public function __construct($message = "", $code = 0)
     {
         $this->messages = Settings::getRouteMessages();
-        
+
         parent::__construct($this->messages[0], $code);
 
         $error = $this->getMessage() ? $message : $this->messages[$this->getCode()];
@@ -24,7 +24,8 @@ class Exception_Route extends \Exception
         $this->writeLog($error, 'route.log');
     }
 
-    public function Error404($msg) {
+    public function Error404($msg)
+    {
         $_SESSION['page_error'] = $msg;
         $host = 'http://' . $_SERVER['HTTP_HOST'] . '/';
         header('HTTP/1.1 404 Not Found');

@@ -14,13 +14,13 @@ class Exception_Database extends \Exception
     public function __construct($message = "", $code = 0)
     {
         $this->messages = Settings::getDatabaseMessages();
-        
+
         $msg = $this->messages[$code];
 
         parent::__construct($msg, $code);
 
         $error = $this->getMessage() ? $message : $this->messages[$this->getCode()];
-        
+
         $error = $msg . $error;
 
         $error .= PHP_EOL . "file '" . $this->getFile() . " Line " . $this->getLine() . PHP_EOL;

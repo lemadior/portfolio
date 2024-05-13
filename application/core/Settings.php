@@ -4,7 +4,7 @@ namespace application\core;
 
 class Settings
 {
-    static private $_instance;
+    private static $_instance;
 
     private $templates;
     private $types;
@@ -37,7 +37,7 @@ class Settings
             return self::$_instance;
         }
 
-        self::$_instance = new self;
+        self::$_instance = new self();
 
         return self::$_instance;
     }
@@ -49,7 +49,8 @@ class Settings
 
     public static function getCommonMessages()
     {
-        return self::get('msg_common');    }
+        return self::get('msg_common');
+    }
 
     public static function getDatabaseMessages()
     {

@@ -17,12 +17,12 @@ class Controller_404 extends Controller
 
     public function action_index(): void
     {
-    	$this->page->data = $this->model->getData();
+        $this->page->data = $this->model->getData();
         $this->page->hideButtons = 'hide';
         $this->page->title = 'ERROR: 404';
         $this->page->headerTitle = 'Page not found';
-	    $this->page->view = '404_view';
+        $this->page->view = '404_view';
 
-	    $this->views->render($this->page);
+        $this->views->render($this->page);
     }
 }

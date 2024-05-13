@@ -9,7 +9,7 @@ use RuntimeException;
 
 class Database
 {
-    static private $connection = null;
+    private static $connection = null;
 
     /**
      * @throws Exception
@@ -47,7 +47,7 @@ class Database
     /**
      * @throws Exception_Database
      */
-    public static function closeConnection() : bool
+    public static function closeConnection(): bool
     {
         try {
             $db_link = self::getConnection();
@@ -66,7 +66,7 @@ class Database
             throw new Exception_Database($db_link->error, 4);
         }
 
-        self::$connection = NULL;
+        self::$connection = null;
 
         return true;
     }

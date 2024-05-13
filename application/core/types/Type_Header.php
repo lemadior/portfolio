@@ -16,34 +16,42 @@ class Type_Header
         $this->buttons = [];
     }
 
-    public function getTitle() {
-		return $this->title;
-	}
-	
-	public function setTitle($title) {
-		$this->title = $title;
-	}
-	
-	public function getButtonsState() {
-		return $this->buttonsState;
-	}
-	
-	public function setButtonsState($state) {
-		if ($state == 'show') $state = 'header_buttons';
-		$this->buttonsState = $state;
-	}
+    public function getTitle()
+    {
+        return $this->title;
+    }
 
-    public function getButtons() {
-		return $this->buttons;
-	}
-	
-	public function setButtons($buttons) {
-		$this->buttons = [];
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    public function getButtonsState()
+    {
+        return $this->buttonsState;
+    }
+
+    public function setButtonsState($state)
+    {
+        if ($state == 'show') {
+            $state = 'header_buttons';
+        }
+        $this->buttonsState = $state;
+    }
+
+    public function getButtons()
+    {
+        return $this->buttons;
+    }
+
+    public function setButtons($buttons)
+    {
+        $this->buttons = [];
 
         foreach ($buttons as $button) {
             $this->buttons[] = new Type_Button($button['id'], $button['name'], $button['action']);
         }
 
-	}
+    }
 
 }

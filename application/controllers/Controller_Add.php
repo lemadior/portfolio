@@ -93,8 +93,7 @@ class Controller_Add extends Controller
         $str_types = '';
         $str_prod_add = '';
 
-        foreach ($types as $index => $type)
-        {
+        foreach ($types as $index => $type) {
             $prod_add = $this->product_add_block;
             $description = '';
             $str_input = '';
@@ -151,7 +150,9 @@ class Controller_Add extends Controller
         return str_replace(
             array("%TYPEID%", "%FIELD%", "%UNIT%"),
             array(strtolower($field['name']), $field['name'],
-                $field['units']), $this->attributes_template);
+                $field['units']),
+            $this->attributes_template
+        );
     }
 
     public function getAddProductBlockData($field)
@@ -159,6 +160,7 @@ class Controller_Add extends Controller
         return str_replace(
             array("%TYPEID%", "%FIELD%", "%UNIT%"),
             array(strtolower($field['name']), $field['name'], $field['units']),
-            $this->attributes_template);
+            $this->attributes_template
+        );
     }
 }

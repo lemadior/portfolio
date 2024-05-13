@@ -3,7 +3,7 @@
 use application\exceptions\Exception_Route;
 use application\core\Route;
 
-spl_autoload_register(static function($class) {
+spl_autoload_register(static function ($class) {
 
     $ds = DIRECTORY_SEPARATOR;
 
@@ -11,13 +11,13 @@ spl_autoload_register(static function($class) {
     $last_elem = array_pop($path_array);
     $subfolder = 'core';
 
-    if (strpos($class, 'Controller_') !== false)  {
+    if (strpos($class, 'Controller_') !== false) {
         $subfolder = 'controllers';
-    } else if (strpos($class, 'Model_') !== false)  {
+    } elseif (strpos($class, 'Model_') !== false) {
         $subfolder = 'models';
-    } else if (strpos($class, 'Exception_') !== false)  {
+    } elseif (strpos($class, 'Exception_') !== false) {
         $subfolder = 'exceptions';
-    } else if (strpos($class, 'Type_') !== false)  {
+    } elseif (strpos($class, 'Type_') !== false) {
         $subfolder = 'core/types';
     }
 

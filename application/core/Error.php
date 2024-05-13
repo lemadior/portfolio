@@ -4,11 +4,12 @@ namespace application\core;
 
 class Error
 {
-    static protected bool $error = false;
+    protected static bool $error = false;
 
     public static function getError(): String
     {
         $err = '';
+
         if (!empty($_SESSION['common_error'])) {
             $err = $_SESSION['common_error'];
             $_SESSION['common_error'] = '';

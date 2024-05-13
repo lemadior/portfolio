@@ -19,7 +19,7 @@ class Model_Add extends Model
         try {
             Database::closeConnection();
         } catch (Exception_Database $err) {
-            throw new Exception_Model($err->getMessage(),1);
+            throw new Exception_Model($err->getMessage(), 1);
         }
     }
 
@@ -33,7 +33,7 @@ class Model_Add extends Model
             // Returned array of arrays aka. [ ['name' => 'Name1'], ['name' => 'Name2'], ... ]
             $result = Database::getQuery($query);
         } catch (Exception_Database $err) {
-            throw new Exception_Model($err->getMessage(),1);
+            throw new Exception_Model($err->getMessage(), 1);
             return [];
         }
 
@@ -56,7 +56,7 @@ class Model_Add extends Model
             // Returned array of arrays aka. [ ['name' => 'Name1'], ['name' => 'Name2'], ... ]
             $result = Database::getQuery($query);
         } catch (Exception_Database $err) {
-            throw new Exception_Model($err->getMessage(),1);
+            throw new Exception_Model($err->getMessage(), 1);
             return '';
         }
 
@@ -65,7 +65,7 @@ class Model_Add extends Model
 
     public function getFieldsDataByType($type)
     {
-        $query="SELECT fields.id, fields.name, fields.units 
+        $query = "SELECT fields.id, fields.name, fields.units 
                 FROM fields, type_fields, types 
                 WHERE types.name = '{$type}' 
                 AND type_fields.type_id = types.id 
@@ -75,7 +75,7 @@ class Model_Add extends Model
             // Returned array of arrays aka. [ ['name' => 'Name1'], ['name' => 'Name2'], ... ]
             $result = Database::getQuery($query);
         } catch (Exception_Database $err) {
-            throw new Exception_Model($err->getMessage(),1);
+            throw new Exception_Model($err->getMessage(), 1);
             return [];
         }
 
@@ -84,14 +84,14 @@ class Model_Add extends Model
 
     public function getSkuList()
     {
-        $query="SELECT sku FROM products";
+        $query = "SELECT sku FROM products";
         $sku = [];
 
         try {
             // Returned array of arrays aka. [ ['name' => 'Name1'], ['name' => 'Name2'], ... ]
             $result = Database::getQuery($query);
         } catch (Exception_Database $err) {
-            throw new Exception_Model($err->getMessage(),1);
+            throw new Exception_Model($err->getMessage(), 1);
             return [];
         }
 

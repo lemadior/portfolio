@@ -49,7 +49,8 @@ class View
                 $btn = str_replace(
                     array("%ID%", "%NAME%", "%ACTION%"),
                     array($button->getId(), $button->getName(), $button->getAction()),
-                    $btpl);
+                    $btpl
+                );
 
                 $headerButtons .= $btn;
             }
@@ -100,4 +101,3 @@ class View
         throw new Exception_Route('Cannot find view file : ' . $viewPath, 4);
     }
 }
-

@@ -14,7 +14,7 @@ class Exception_Model extends \Exception
     public function __construct($message = "", $code = 0)
     {
         $this->messages = Settings::getCommonMessages();
-        
+
         $msg = $this->messages[$code];
 
         parent::__construct($msg, $code);

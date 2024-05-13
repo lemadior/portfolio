@@ -33,11 +33,11 @@ class Route
 
         //Add prefixes
         $model_name = 'Model_' . ucfirst($controller_name);
-	    $controller_name = 'Controller_' . ucfirst($controller_name);
+        $controller_name = 'Controller_' . ucfirst($controller_name);
         $action_name = 'action_' . $action_name;
 
         //get file with model
-//        $model_file = strtolower($model_name) . '.php';
+        //        $model_file = strtolower($model_name) . '.php';
         $model_file = $model_name . '.php';
         $model_path = 'application/models/' . $model_file;
 
@@ -46,7 +46,7 @@ class Route
         }
 
         //Get file with controller's class
-//        $controller_file = strtolower($controller_name) . '.php';
+        //        $controller_file = strtolower($controller_name) . '.php';
         $controller_file = $controller_name . '.php';
         $controller_path = 'application/controllers/' . $controller_file;
 
@@ -58,7 +58,7 @@ class Route
 
         $controller_name = "\\application\\controllers\\" . $controller_name;
 
-        $controller = new $controller_name;
+        $controller = new $controller_name();
         $action = $action_name;
 
         if (method_exists($controller, $action)) {
@@ -69,4 +69,3 @@ class Route
     }
 
 }
-

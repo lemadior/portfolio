@@ -21,44 +21,54 @@ class Type_Product extends Type_Goods
         $this->fields = $fields;
     }
 
-    public function getAttributeValue() {
-		return $this->attributeValue;
-	}
+    public function getAttributeValue()
+    {
+        return $this->attributeValue;
+    }
 
-	public function setAttributeValue($attr) {
-		$this->attributeValue = $attr;
-	}
+    public function setAttributeValue($attr)
+    {
+        $this->attributeValue = $attr;
+    }
 
-    public function getSku() {
-		return $this->sku;
-	}
+    public function getSku()
+    {
+        return $this->sku;
+    }
 
-	public function setSku($sku) {
-		$this->sku = $sku;
-	}
+    public function setSku($sku)
+    {
+        $this->sku = $sku;
+    }
 
-    public function getPrice() {
-		return $this->price;
-	}
+    public function getPrice()
+    {
+        return $this->price;
+    }
 
-	public function setPrice($price) {
-		$this->price = $price;
-	}
+    public function setPrice($price)
+    {
+        $this->price = $price;
+    }
 
-	public function getType() {
-		return $this->type;
-	}
+    public function getType()
+    {
+        return $this->type;
+    }
 
-	public function setType($type) {
-		$this->type = $type;
-	}
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
 
-    public function getFields() {
-		return $this->fields;
-	}
+    public function getFields()
+    {
+        return $this->fields;
+    }
 
-	public function setFields($fields) {
-		$this->fields = $fields;
-	}
+    public function setFields($fields)
+    {
+        $this->fields = $fields;
+    }
 
 }

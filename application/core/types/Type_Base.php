@@ -2,8 +2,8 @@
 
 namespace application\core\types;
 
-abstract class Type_Base{
-    
+abstract class Type_Base
+{
     protected $id;
     protected $name;
 

@@ -17,7 +17,6 @@ use application\exceptions\Exception_Database;
 use Exception;
 use RuntimeException;
 
-
 class Model_Main extends Model
 {
     use SystemMethods;
@@ -70,7 +69,7 @@ class Model_Main extends Model
         try {
             Database::closeConnection();
         } catch (Exception_Database $err) {
-            throw new Exception_Model($err->getMessage(),1);
+            throw new Exception_Model($err->getMessage(), 1);
         }
 
         return $data;
@@ -114,13 +113,15 @@ class Model_Main extends Model
             throw new RuntimeException($err->getMessage());
         }
 
-        return new Type_Product($id,
-                           $product['name'],
-                           $product['sku'],
-                           $product['price'],
-                           $product['value'],
-                           $type,
-                           $field);
+        return new Type_Product(
+            $id,
+            $product['name'],
+            $product['sku'],
+            $product['price'],
+            $product['value'],
+            $type,
+            $field
+        );
     }
 
     /**
@@ -136,7 +137,7 @@ class Model_Main extends Model
             // Returned array of arrays aka. [ ['name' => 'Name1'], ['name' => 'Name2'], ... ]
             $result = Database::getQuery($query);
         } catch (Exception_Database $err) {
-            throw new Exception_Model($err->getMessage(),1);
+            throw new Exception_Model($err->getMessage(), 1);
         }
 
         $allowed_types = Settings::getAllowedTypes();
@@ -266,14 +267,14 @@ class Model_Main extends Model
             // Returned array of arrays aka. [ ['name' => 'Name1'], ['name' => 'Name2'], ... ]
             $result = Database::getQuery($query);
         } catch (Exception_Database $err) {
-            throw new RuntimeException($err->getMessage(),1);
+            throw new RuntimeException($err->getMessage(), 1);
         }
 
-         foreach ($result as $val) {
-             $value .= $val['value'] . "x";
-         }
+        foreach ($result as $val) {
+            $value .= $val['value'] . "x";
+        }
 
-         return rtrim($value, 'x');
+        return rtrim($value, 'x');
     }
 
     private function getFieldsDataByProductId($id)
@@ -317,11 +318,11 @@ class Model_Main extends Model
         try {
             Database::doQuery($query);
         } catch (Exception $err) {
-            throw new Exception_Database($err->getMessage(),5);
+            throw new Exception_Database($err->getMessage(), 5);
         }
 
         if ($db_link->error) {
-            throw new Exception_Database($db_link->error,5);
+            throw new Exception_Database($db_link->error, 5);
         }
 
         return true;

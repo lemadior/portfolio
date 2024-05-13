@@ -19,7 +19,7 @@ class Controller_Main extends Controller
 
     public function __construct()
     {
-	    parent::__construct();
+        parent::__construct();
         $this->model = new Model_Main();
         $this->product_card_template =  Settings::getTemplate('products');
         $this->header_buttons = [
@@ -36,7 +36,7 @@ class Controller_Main extends Controller
         if (!empty($_POST)) {
 
             $answ = 'SUCCESS';
-            foreach ($_POST as $index => $id ) {
+            foreach ($_POST as $index => $id) {
                 if (!$this->model->deleteProductById($id)) {
                     $answ = "FAIL";
                     break;
@@ -90,7 +90,7 @@ class Controller_Main extends Controller
         $card = str_replace("%PRICE%", $product->getPrice(), $card);
 
         $card = str_replace("%ATTR%", $product->getType()->getAttributes(), $card);
-        $card = str_replace("%VALUE%", $product->getAttributeValue() , $card);
+        $card = str_replace("%VALUE%", $product->getAttributeValue(), $card);
         $card = str_replace("%UNITS%", $this->prepareUnits($product->getFields()->getUnits()[0]), $card);
 
         return $card;
