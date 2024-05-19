@@ -23,16 +23,15 @@ if [ ! -z "$php_container_running" ]; then
     fi
 fi
 
-#echo "Create .env file"
-#/usr/bin/cp ./.env.example ./.env || exit 1
-
 echo "Generate application key"
 /usr/bin/docker exec -it app php artisan key:generate --ansi || exit 1
 
-echo "done."
+echo "Do migration & seed"
+/usr/bin/docker exec -it app php artisan migrate --seed || exit 1
 
-echo "NOTE: don't forget to add username and password to the '.env' file"
-echo "      after this do command 'docker exec -it app php artisan migrate'"
-echo
+echo "Create secret key for JWT Auth"
+/usr/bin/docker exec -it app php artisan jwt:secret || exit 1
+
+echo "done."
 
 exit 0
